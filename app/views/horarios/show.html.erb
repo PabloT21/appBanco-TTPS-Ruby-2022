@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @horario %>
+
+<div>
+  <%= link_to "Edit this horario", edit_horario_path(@horario) %> |
+  <%= link_to "Back to horarios", horarios_path %>
+
+  <%= button_to "Destroy this horario", @horario, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class Horario < ApplicationRecord
+end

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Horarios</h1>
+
+<div id="horarios">
+  <% @horarios.each do |horario| %>
+    <%= render horario %>
+    <p>
+      <%= link_to "Show this horario", horario %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New horario", new_horario_path %>
