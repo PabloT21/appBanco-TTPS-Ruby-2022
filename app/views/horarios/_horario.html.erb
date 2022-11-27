@@ -1,9 +1,9 @@
             <div class="col mr-2">
                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                   Horario <%= dom_id horario %></div>
-                <div class="h5 mb-0 font-weight-bold text-gray-800">Inicio:</div>    <%= horario.inicio %>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">Inicio:</div>    <%= horario.inicio.strftime("%H:%M:%S") %>
 
-                <div class="h5 mb-0 font-weight-bold text-gray-800">Fin:</div>     <%= horario.fin %>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">Fin:</div>     <%= horario.fin.strftime("%H:%M:%S") %>
 
 
             </div>
