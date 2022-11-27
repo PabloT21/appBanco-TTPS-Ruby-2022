@@ -3,8 +3,9 @@
 <%= render @horario %>
 
 <div>
-  <%= link_to "Edit this horario", edit_horario_path(@horario) %> |
-  <%= link_to "Back to horarios", horarios_path %>
-
-  <%= button_to "Destroy this horario", @horario, method: :delete %>
+  <%= link_to "Editar horario", edit_horario_path(@horario) %> |
+  <%= link_to "Volver al listado de horarios", horarios_path %>
+  <br>
+  <%= button_to "Eliminar este horario", @horario, method: :delete, class: "d-none text-white d-sm-inline-block btn btn-sm bg-danger shadow-sm" %> 
+  <br>
 </div>

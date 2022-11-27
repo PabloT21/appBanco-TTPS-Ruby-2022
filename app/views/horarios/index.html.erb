@@ -2,11 +2,20 @@
 
 <div id="horarios">
   <% @horarios.each do |horario| %>
-    <%= render horario %>
-    <p>
-      <%= link_to "Show this horario", horario %>
-    </p>
-  <% end %>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            
+            <%= render horario %>
+            <span>
+              <%= link_to "Ver horario", horario, class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" %>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
 </div>
 
 <%= link_to "New horario", new_horario_path %>
