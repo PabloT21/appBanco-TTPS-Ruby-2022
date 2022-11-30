@@ -1,0 +1,67 @@
+<%= form_with(model: schedule) do |form| %>
+  <% if schedule.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% schedule.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :lunesInicio, style: "display: block" %>
+    <%= form.time_field :lunesInicio %>
+  </div>
+
+  <div>
+    <%= form.label :lunesFin, style: "display: block" %>
+    <%= form.time_field :lunesFin %>
+  </div>
+
+  <div>
+    <%= form.label :martesInicio, style: "display: block" %>
+    <%= form.time_field :martesInicio %>
+  </div>
+
+  <div>
+    <%= form.label :martesFin, style: "display: block" %>
+    <%= form.time_field :martesFin %>
+  </div>
+
+  <div>
+    <%= form.label :miercolesInicio, style: "display: block" %>
+    <%= form.time_field :miercolesInicio %>
+  </div>
+
+  <div>
+    <%= form.label :miercolesFin, style: "display: block" %>
+    <%= form.time_field :miercolesFin %>
+  </div>
+
+  <div>
+    <%= form.label :juevesInicio, style: "display: block" %>
+    <%= form.time_field :juevesInicio %>
+  </div>
+
+  <div>
+    <%= form.label :juevesFin, style: "display: block" %>
+    <%= form.time_field :juevesFin %>
+  </div>
+
+  <div>
+    <%= form.label :viernesInicio, style: "display: block" %>
+    <%= form.time_field :viernesInicio %>
+  </div>
+
+  <div>
+    <%= form.label :viernesFin, style: "display: block" %>
+    <%= form.time_field :viernesFin %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

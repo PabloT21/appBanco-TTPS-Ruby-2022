@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sucursal %>
+
+<div>
+  <%= link_to "Edit this sucursal", edit_sucursal_path(@sucursal) %> |
+  <%= link_to "Back to sucursals", sucursals_path %>
+
+  <%= button_to "Destroy this sucursal", @sucursal, method: :delete %>
+</div>

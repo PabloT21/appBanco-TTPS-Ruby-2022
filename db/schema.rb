@@ -10,12 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_27_045653) do
-  create_table "horarios", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.time "inicio"
-    t.time "fin"
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_005317) do
+  create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.time "lunesInicio"
+    t.time "lunesFin"
+    t.time "martesInicio"
+    t.time "martesFin"
+    t.time "miercolesInicio"
+    t.time "miercolesFin"
+    t.time "juevesInicio"
+    t.time "juevesFin"
+    t.time "viernesInicio"
+    t.time "viernesFin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sucursals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nombre"
+    t.string "dirección"
+    t.string "telefono"
+    t.bigint "schedule_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nombre"], name: "index_sucursals_on_nombre", unique: true
+    t.index ["schedule_id"], name: "index_sucursals_on_schedule_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -31,4 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_27_045653) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sucursals", "schedules"
 end

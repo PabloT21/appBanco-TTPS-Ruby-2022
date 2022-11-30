@@ -1,0 +1,42 @@
+# == Schema Information
+#
+# Table name: schedules
+#
+#  id              :bigint           not null, primary key
+#  juevesFin       :time
+#  juevesInicio    :time
+#  lunesFin        :time
+#  lunesInicio     :time
+#  martesFin       :time
+#  martesInicio    :time
+#  miercolesFin    :time
+#  miercolesInicio :time
+#  viernesFin      :time
+#  viernesInicio   :time
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+one:
+  lunesInicio: 2022-11-29 21:52:51
+  lunesFin: 2022-11-29 21:52:51
+  martesInicio: 2022-11-29 21:52:51
+  martesFin: 2022-11-29 21:52:51
+  miercolesInicio: 2022-11-29 21:52:51
+  miercolesFin: 2022-11-29 21:52:51
+  juevesInicio: 2022-11-29 21:52:51
+  juevesFin: 2022-11-29 21:52:51
+  viernesInicio: 2022-11-29 21:52:51
+  viernesFin: 2022-11-29 21:52:51
+
+two:
+  lunesInicio: 2022-11-29 21:52:51
+  lunesFin: 2022-11-29 21:52:51
+  martesInicio: 2022-11-29 21:52:51
+  martesFin: 2022-11-29 21:52:51
+  miercolesInicio: 2022-11-29 21:52:51
+  miercolesFin: 2022-11-29 21:52:51
+  juevesInicio: 2022-11-29 21:52:51
+  juevesFin: 2022-11-29 21:52:51
+  viernesInicio: 2022-11-29 21:52:51
+  viernesFin: 2022-11-29 21:52:51

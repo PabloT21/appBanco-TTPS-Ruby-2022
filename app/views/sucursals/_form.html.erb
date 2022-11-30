@@ -1,0 +1,37 @@
+<%= form_with(model: sucursal) do |form| %>
+  <% if sucursal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sucursal.errors.count, "error") %> prohibited this sucursal from being saved:</h2>
+
+      <ul>
+        <% sucursal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre, style: "display: block" %>
+    <%= form.text_field :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :dirección, style: "display: block" %>
+    <%= form.text_field :dirección %>
+  </div>
+
+  <div>
+    <%= form.label :telefono, style: "display: block" %>
+    <%= form.text_field :telefono %>
+  </div>
+
+  <div>
+    <%= form.label :schedule_id, style: "display: block" %>
+  <%= select_tag(:schedule_id, options_from_collection_for_select(Schedule.all, :id, :name), include_blank: "Seleccionar horario") %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
