@@ -6,4 +6,7 @@ end
 def main
 end
 
+def profile
+end
+
 end

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     root to: "dashboard#index", as: :authenticated_root
   end
   
+  get "profile", to: "dashboard#profile"
+
   get "formAdmin", to: "admin_form#new", as:"new_admin_form"
 
   get "formPersonal", to: "user_forms#newPersonal"
