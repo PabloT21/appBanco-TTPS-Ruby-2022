@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     root to: "dashboard#index", as: :authenticated_root
   end
   
-  get "createAdmin", to: "user_forms#newAdmin"
+  get "formAdmin", to: "admin_form#new", as:"new_admin_form"
+
+  get "formPersonal", to: "user_forms#newPersonal"
 
 
   # Defines the root path route ("/")

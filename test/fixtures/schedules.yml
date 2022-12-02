@@ -11,10 +11,15 @@
 #  martesInicio    :time
 #  miercolesFin    :time
 #  miercolesInicio :time
+#  name            :string(255)
 #  viernesFin      :time
 #  viernesInicio   :time
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#
+# Indexes
+#
+#  index_schedules_on_name  (name) UNIQUE
 #
 
 one:

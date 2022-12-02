@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_005317) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_203807) do
   create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.time "lunesInicio"
     t.time "lunesFin"
@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_005317) do
     t.time "viernesFin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["name"], name: "index_schedules_on_name", unique: true
   end
 
   create_table "sucursals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

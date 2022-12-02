@@ -22,10 +22,13 @@
 class Sucursal < ApplicationRecord
   belongs_to :schedule
 
+  validates :schedule_id, uniqueness: true
   validates :dirección, :nombre, :telefono, presence: true
+
+  
   #Validacion personalizada:
   # validate :nombre_funcion 
   #
-  # def nombre_funcion
+  #def nombre_funcion
   # emd
 end

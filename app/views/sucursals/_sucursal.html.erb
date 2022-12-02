@@ -1,22 +1,14 @@
 <div id="<%= dom_id sucursal %>">
-  <p>
-    <strong>Nombre:</strong>
-    <%= sucursal.nombre %>
-  </p>
+<div class="col mr-2">
+     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+        Sucursal <%= sucursal.id %></div>
 
-  <p>
-    <strong>Dirección:</strong>
-    <%= sucursal.dirección %>
-  </p>
+    <div class="h5 mb-0 font-weight-bold text-gray-800">Nombre:</div>    <%= sucursal.nombre %>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Dirección:</div>     <%= sucursal.dirección %>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Telefono:</div>     <%= sucursal.telefono %>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Horarios:</div>     <%= sucursal.schedule_id %>
 
-  <p>
-    <strong>Telefono:</strong>
-    <%= sucursal.telefono %>
-  </p>
-
-  <p>
-    <strong>Schedule:</strong>
-    <%= sucursal.schedule_id %>
-  </p>
-
+         </div>
+         <div class="col-auto">
+         </div>
 </div>

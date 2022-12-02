@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Sucursals</h1>
+<h1>Sucursales</h1>
 
 <div id="sucursals">
   <% @sucursals.each do |sucursal| %>
-    <%= render sucursal %>
-    <p>
-      <%= link_to "Show this sucursal", sucursal %>
-    </p>
+    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          
+          <%= render sucursal %>
+          <span>
+          <%= link_to "Ver sucursal", sucursal, class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
   <% end %>
+  <%= link_to "Nueva sucursal", new_sucursal_path, class:"btn btn-success" %>
 </div>
-
-<%= link_to "New sucursal", new_sucursal_path %>

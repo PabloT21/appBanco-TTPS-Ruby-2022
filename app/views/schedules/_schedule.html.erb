@@ -1,52 +1,35 @@
 <div id="<%= dom_id schedule %>">
   <p>
-    <strong>Lunesinicio:</strong>
-    <%= schedule.lunesInicio %>
+  <%= schedule.name %>
+</p>
+  <p>
+    <strong>Lunes:</strong>
+    <%= schedule.lunesInicio.strftime("%H:%M:%S") %> -
+    <%= schedule.lunesFin.strftime("%H:%M:%S") %>
   </p>
 
   <p>
-    <strong>Lunesfin:</strong>
-    <%= schedule.lunesFin %>
+    <strong>Martes:</strong>
+    <%= schedule.martesInicio.strftime("%H:%M:%S") %> -
+    <%= schedule.martesFin.strftime("%H:%M:%S") %>
   </p>
 
   <p>
-    <strong>Martesinicio:</strong>
-    <%= schedule.martesInicio %>
+    <strong>Miercoles:</strong>
+    <%= schedule.miercolesInicio.strftime("%H:%M:%S") %> -
+    <%= schedule.miercolesFin.strftime("%H:%M:%S") %>
   </p>
 
   <p>
-    <strong>Martesfin:</strong>
-    <%= schedule.martesFin %>
+    <strong>Jueves:</strong>
+    <%= schedule.juevesInicio.strftime("%H:%M:%S") %> -
+    <%= schedule.juevesFin.strftime("%H:%M:%S") %>
   </p>
-
+  
   <p>
-    <strong>Miercolesinicio:</strong>
-    <%= schedule.miercolesInicio %>
-  </p>
-
-  <p>
-    <strong>Miercolesfin:</strong>
-    <%= schedule.miercolesFin %>
-  </p>
-
-  <p>
-    <strong>Juevesinicio:</strong>
-    <%= schedule.juevesInicio %>
-  </p>
-
-  <p>
-    <strong>Juevesfin:</strong>
-    <%= schedule.juevesFin %>
-  </p>
-
-  <p>
-    <strong>Viernesinicio:</strong>
-    <%= schedule.viernesInicio %>
-  </p>
-
-  <p>
-    <strong>Viernesfin:</strong>
-    <%= schedule.viernesFin %>
-  </p>
+    <strong>Viernes:</strong>
+    <%= schedule.viernesInicio.strftime("%H:%M:%S") %> -
+    <%= schedule.viernesFin.strftime("%H:%M:%S") %>
+</p>
 
 </div>
