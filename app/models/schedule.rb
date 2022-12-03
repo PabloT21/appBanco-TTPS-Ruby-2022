@@ -100,4 +100,35 @@ def individual_empty_validation(inicio,fin)
 end
 
 
+def validate_time(day,hour)
+    case day
+    when "Monday"
+        validate_day_schedule(lunesInicio,lunesFin,hour)
+    when "Tuesday"
+        validate_day_schedule(martesInicio,martesFin,hour)
+    when "Wednesday"
+        validate_day_schedule(miercolesInicio,miercolesFin,hour)
+    when "Thursday"
+        validate_day_schedule(juevesInicio,juevesFin,hour)
+    when "Friday"
+        validate_day_schedule(viernesInicio,viernesFin,hour)
+    when "Saturday"
+        validate_day_schedule(sabadoInicio,sabadoFin,hour)
+    when "Sunday"
+        validate_day_schedule(domingoInicio,domingoFin,hour)
+    end
+end
+
+def validate_day_schedule(inicio,fin,hour)
+    if(inicio.presence)
+        inicio = inicio.strftime("%H:%M:%S")
+        fin = fin.strftime("%H:%M:%S")
+        if(hour > inicio && hour < fin)
+            return true
+        else
+            return false
+        end
+    end
+end
+
 end

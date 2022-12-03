@@ -1,0 +1,42 @@
+<%= form_with(model: turn) do |form| %>
+  <% if turn.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(turn.errors.count, "error") %> prohibited this turn from being saved:</h2>
+
+      <ul>
+        <% turn.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :sucursal_id, style: "display: block" %>
+    <%= form.select(:sucursal_id, options_from_collection_for_select(Sucursal.all, :id, :nombre, 1), include_blank: true) %>
+</div>
+
+  <div>
+    <%= form.label :fecha, style: "display: block" %>
+    <%= form.date_field :fecha %>
+  </div>
+
+  <div>
+    <%= form.label :reason, style: "display: block" %>
+    <%= form.text_field :reason %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :hora, style: "display: block" %>
+    <%= form.time_field :hora %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

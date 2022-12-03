@@ -25,7 +25,9 @@ class Sucursal < ApplicationRecord
   validates :schedule_id, uniqueness: true
   validates :dirección, :nombre, :telefono, presence: true
 
-  
+  def escribir(valor)
+    return valor
+  end
   #Validacion personalizada:
   # validate :nombre_funcion 
   #

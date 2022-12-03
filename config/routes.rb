@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :turns
   resources :sucursals
   resources :schedules
   devise_for :users
