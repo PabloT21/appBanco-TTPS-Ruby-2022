@@ -3,6 +3,8 @@
 # Table name: schedules
 #
 #  id              :bigint           not null, primary key
+#  domingoFin      :time
+#  domingoInicio   :time
 #  juevesFin       :time
 #  juevesInicio    :time
 #  lunesFin        :time
@@ -12,6 +14,8 @@
 #  miercolesFin    :time
 #  miercolesInicio :time
 #  name            :string(255)
+#  sabadoFin       :time
+#  sabadoInicio    :time
 #  viernesFin      :time
 #  viernesInicio   :time
 #  created_at      :datetime         not null

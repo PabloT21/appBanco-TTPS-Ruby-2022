@@ -4,32 +4,36 @@
 </p>
   <p>
     <strong>Lunes:</strong>
-    <%= schedule.lunesInicio.strftime("%H:%M:%S") %> -
-    <%= schedule.lunesFin.strftime("%H:%M:%S") %>
+    <%= checkNull(schedule.lunesInicio,schedule.lunesFin) %> 
   </p>
 
   <p>
     <strong>Martes:</strong>
-    <%= schedule.martesInicio.strftime("%H:%M:%S") %> -
-    <%= schedule.martesFin.strftime("%H:%M:%S") %>
+    <%= checkNull(schedule.martesInicio,schedule.martesFin) %> 
   </p>
 
   <p>
     <strong>Miercoles:</strong>
-    <%= schedule.miercolesInicio.strftime("%H:%M:%S") %> -
-    <%= schedule.miercolesFin.strftime("%H:%M:%S") %>
+    <%= checkNull(schedule.miercolesInicio,schedule.miercolesFin) %> 
   </p>
 
   <p>
     <strong>Jueves:</strong>
-    <%= schedule.juevesInicio.strftime("%H:%M:%S") %> -
-    <%= schedule.juevesFin.strftime("%H:%M:%S") %>
+    <%= checkNull(schedule.juevesInicio,schedule.juevesFin) %> 
   </p>
   
   <p>
     <strong>Viernes:</strong>
-    <%= schedule.viernesInicio.strftime("%H:%M:%S") %> -
-    <%= schedule.viernesFin.strftime("%H:%M:%S") %>
+    <%= checkNull(schedule.viernesInicio,schedule.viernesFin) %> 
 </p>
 
+  <p> 
+    <strong>Sabado:</strong>
+    <%= checkNull(schedule.sabadoInicio,schedule.sabadoFin) %> 
+  </p>
+
+  <p>
+    <strong>Domingo:</strong>
+    <%= checkNull(schedule.domingoInicio,schedule.domingoFin) %> 
+  </p>
 </div>
