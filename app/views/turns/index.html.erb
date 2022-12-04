@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Turns</h1>
+<h1>Turnos</h1>
 
 <div id="turns">
 <div class="container-fluid d-flex flex-wrap">
@@ -10,7 +10,7 @@
       <div class="card-body">
         <div class=" align-items-center">
             <%= render turn %>
-       </div>
+       <div>
     <p>
       <%= link_to "Show this turn", turn,  class: "btn btn-info" %>
     </p>
@@ -20,6 +20,6 @@
   </div>
 </div>
   <% end %>
-  <%= link_to "New turn", new_turn_path, class:"btn btn-success" %>
 </div>
+  <%= link_to "New turn", new_turn_path, class:"btn btn-success" %>
 </div>

@@ -1,9 +1,17 @@
 class TurnsController < ApplicationController
+  #load_and_authorize_resource
   before_action :set_turn, only: %i[ show edit update destroy ]
 
   # GET /turns or /turns.json
   def index
-    @turns = Turn.all
+    if (current_user.rol == "usuario")
+      @turns = Turn.where(
+        'creador_id = ?',
+        current_user.id
+      ).group(:id)
+    else
+      @turns = Turn.all
+    end
   end
 
   # GET /turns/1 or /turns/1.json

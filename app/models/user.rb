@@ -29,7 +29,7 @@ class User < ApplicationRecord
   has_many :creados, :class_name => "Turn", :foreign_key => "creador_id"
   has_many :atendidos, :class_name => "Turn", :foreign_key => "empleado_id"
 
-  after_initialize :set_default_rol, :if => :new_record?
+  after_create :set_default_rol, :if => :new_record?
   def set_default_rol
     self.rol ||= "usuario"
   end

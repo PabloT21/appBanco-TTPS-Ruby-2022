@@ -29,6 +29,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem "cancancan"
+
 gem "turbolinks"
 
 gem "annotate"
