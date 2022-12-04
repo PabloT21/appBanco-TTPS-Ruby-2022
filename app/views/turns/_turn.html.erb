@@ -11,17 +11,17 @@
 
   <p>
   <strong>Hora:</strong>
-  <%= turn.hora %>
+  <%= turn.hora.strftime("%H:%M:%S") %>
 </p>
 
   <p>
-    <strong>Reason:</strong>
+    <strong>Motivo:</strong>
     <%= turn.reason %>
   </p>
 
   <p>
-    <strong>State:</strong>
-    <%= turn.state %>
+    <strong>Estado:</strong>
+    <%= translateState(turn.state) %>
   </p>
 
 

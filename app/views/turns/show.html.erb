@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @turn %>
-
+<br></br>
 <div>
-  <%= link_to "Edit this turn", edit_turn_path(@turn) %> |
-  <%= link_to "Back to turns", turns_path %>
-
-  <%= button_to "Destroy this turn", @turn, method: :delete %>
+  <%= link_to "Editar turno", edit_turn_path(@turn), class: "btn btn-primary" %> |
+  <%= link_to "Volver a listado de turnos", turns_path, class: "btn btn-secondary" %>
+  <br></br>
+  <%= button_to "Cancelar turno", @turn, method: :delete, class: "btn btn-danger" %>
 </div>

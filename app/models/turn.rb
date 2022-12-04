@@ -41,11 +41,15 @@ class Turn < ApplicationRecord
     if sucursal.nil?
       errors.add(:sucursal_id, " la sucursal no existe")
     else
-        day = fecha.strftime("%A")
-        hour = hora.strftime("%H:%M:%S")
-        schedule = Schedule.find_by_id(sucursal.schedule_id)
-        if (!schedule.validate_time(day,hour))
-          errors.add(:fecha, " no se encuentra dentro de la franja horaria de la sucursal para el día elegido")
+        if(fecha > DateTime.current.beginning_of_day)
+          day = fecha.strftime("%A")
+          hour = hora.strftime("%H:%M:%S")
+          schedule = Schedule.find_by_id(sucursal.schedule_id)
+          if (!schedule.validate_time(day,hour))
+            errors.add(:hour, " no se encuentra dentro de la franja horaria de la sucursal para el día elegido")
+          end
+        else
+          errors.add(:fecha, " no puede ser anterior a hoy.")
         end
     end
   end

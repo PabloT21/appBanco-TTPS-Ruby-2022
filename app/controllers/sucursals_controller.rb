@@ -49,12 +49,15 @@ class SucursalsController < ApplicationController
 
   # DELETE /sucursals/1 or /sucursals/1.json
   def destroy
+    @turnos = Turn.find(@sucursal.id).where(state==0)
+    if(@turnos.empty?)
     @sucursal.destroy
 
     respond_to do |format|
       format.html { redirect_to sucursals_url, notice: "Sucursal was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
   end
 
   private
