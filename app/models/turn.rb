@@ -21,7 +21,9 @@
 #
 class Turn < ApplicationRecord
   belongs_to :sucursal
+  validates :fecha,:hora,:reason,:sucursal_id, presence: true
   validate :validate_date
+  attribute :state, :integer, default: 0
 
   def validate_date
     return unless errors.blank?
