@@ -2,13 +2,24 @@
 
 <h1>Horarios</h1>
 
-<div id="schedules">
+<div id="schedules" >
+<div class="container-fluid d-flex flex-wrap">
   <% @schedules.each do |schedule| %>
-    <%= render schedule %>
+    <div class=" col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class=" align-items-center">
+           <%= render schedule %>
+    <div>
     <p>
-      <%= link_to "Show this schedule", schedule %>
+      <%= link_to "Ver horario", schedule, class: "btn btn-info" %>
     </p>
+    </div>
+    </div>
+    </div>
+  </div>
+</div>
   <% end %>
 </div>
-
-<%= link_to "New schedule", new_schedule_path %>
+<%= link_to "New schedule", new_schedule_path, class:"btn btn-success" %>
+</div>

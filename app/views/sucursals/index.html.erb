@@ -3,20 +3,22 @@
 <h1>Sucursales</h1>
 
 <div id="sucursals">
+<div class="container-fluid d-flex flex-wrap">
   <% @sucursals.each do |sucursal| %>
     <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-primary shadow h-100 py-2">
       <div class="card-body">
-        <div class="row no-gutters align-items-center">
+        <div class="align-items-center">
           
           <%= render sucursal %>
           <span>
-          <%= link_to "Ver sucursal", sucursal, class: "d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" %>
+          <%= link_to "Ver sucursal", sucursal, class: "btn btn-info" %>
           </span>
         </div>
       </div>
     </div>
   </div>
   <% end %>
+  </div>
   <%= link_to "Nueva sucursal", new_sucursal_path, class:"btn btn-success" %>
 </div>

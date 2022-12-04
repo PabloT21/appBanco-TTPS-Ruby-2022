@@ -11,17 +11,22 @@
 #  rol                    :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  sucursal_id            :bigint           not null
 #
 # Indexes
 #
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_sucursal_id           (sucursal_id)
 #
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  attribute :rol, :string, default: "usuario"
   attribute :sucursal, :integer
+  after_initialize :set_default_rol, :if => :new_record?
+  def set_default_rol
+    self.rol ||= "usuario"
+  end
 end

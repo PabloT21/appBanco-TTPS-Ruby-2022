@@ -1,10 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @sucursal %>
-
+<br></br>
 <div>
-  <%= link_to "Edit this sucursal", edit_sucursal_path(@sucursal) %> |
-  <%= link_to "Back to sucursals", sucursals_path %>
-
-  <%= button_to "Destroy this sucursal", @sucursal, method: :delete %>
+  <%= link_to "Editar sucursal", edit_sucursal_path(@sucursal), class: "btn btn-primary" %> |
+  <%= link_to "Ver todas las sucursales", sucursals_path, class: "btn btn-secondary" %>
+  <br></br>
+  <%= button_to "Eliminar sucursal", @sucursal, method: :delete, class: "btn btn-danger" %>
 </div>
