@@ -22,7 +22,7 @@ class TurnsController < ApplicationController
   # POST /turns or /turns.json
   def create
     @turn = Turn.new(turn_params)
-
+    @turn.creador_id = current_user.id
     respond_to do |format|
       if @turn.save
         format.html { redirect_to turn_url(@turn), notice: "Turn was successfully created." }
@@ -65,6 +65,6 @@ class TurnsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def turn_params
-      params.require(:turn).permit(:sucursal_id, :fecha, :reason, :state, :hora)
+      params.require(:turn).permit(:sucursal_id, :fecha, :reason, :state, :hora, :creador_id, :empleado_id)
     end
 end

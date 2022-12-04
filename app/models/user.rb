@@ -25,6 +25,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   attribute :sucursal, :integer
+
+  has_many :creados, :class_name => "Turn", :foreign_key => "creador_id"
+  has_many :atendidos, :class_name => "Turn", :foreign_key => "empleado_id"
+
   after_initialize :set_default_rol, :if => :new_record?
   def set_default_rol
     self.rol ||= "usuario"

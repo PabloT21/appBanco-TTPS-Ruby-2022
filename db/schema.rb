@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_03_231324) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_142502) do
   create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.time "lunesInicio"
     t.time "lunesFin"
@@ -51,6 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_231324) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.time "hora"
+    t.bigint "creador_id"
+    t.bigint "empleados_id"
+    t.index ["creador_id"], name: "index_turns_on_creador_id"
+    t.index ["empleados_id"], name: "index_turns_on_empleados_id"
     t.index ["sucursal_id"], name: "index_turns_on_sucursal_id"
   end
 
@@ -71,4 +75,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_231324) do
 
   add_foreign_key "sucursals", "schedules"
   add_foreign_key "turns", "sucursals"
+  add_foreign_key "turns", "users", column: "creador_id"
+  add_foreign_key "turns", "users", column: "empleados_id"
 end
