@@ -49,12 +49,21 @@ class SchedulesController < ApplicationController
 
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
-    @schedule.destroy
-
-    respond_to do |format|
-      format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
-      format.json { head :no_content }
+    @sucur = Sucursal.where(schedule_id: @schedule.id)
+    if(@sucur.empty?)
+      @schedule.destroy
+      respond_to do |format|
+       format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      @schedule.errors.add(:schedule," no se puede eliminar porque esta asociado a una sucursal")
+      respond_to do |format|
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @schedule.errors, status: :unprocessable_entity }
+      end
     end
+
   end
 
   private
