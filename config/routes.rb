@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get "formPersonal", to: "user_forms#newPersonal"
 
+  get "listUsers", to:"dashboard#indexUsers"
 
   # Defines the root path route ("/")
    root "dashboard#main"
