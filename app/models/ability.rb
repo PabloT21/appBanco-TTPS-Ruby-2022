@@ -4,6 +4,23 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+
+    # Client user permissions
+    can :read, Turn, creador_id: user.id
+
+    if user.empleado?
+      # Employee user permissions
+      can :update, Sucursal 
+      can :facha, Schedule
+    elsif user.admin?
+      # Admin user permissions
+      can :read, :all
+      can :create, :all
+      can :manage, :all
+      can :manage, Schedule
+    end
+
+
     #can :manage, Sucursal, empleado_id: user.sucursal_id
 
     # Define abilities for the user here. For example:

@@ -33,4 +33,18 @@ class User < ApplicationRecord
   def set_default_rol
     self.rol ||= "usuario"
   end
+  #Role methods
+  def admin?
+    rol=="admin"
+  end
+
+  def empleado?
+    rol=="empleado"
+  end
+
+  def usuario?
+    rol=="usuario"
+  end
+
+
 end
