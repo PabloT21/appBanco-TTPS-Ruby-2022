@@ -42,7 +42,7 @@ class User < ApplicationRecord
     rol=="empleado"
   end
 
-  def usuario?
+  def cliente?
     rol=="usuario"
   end
 

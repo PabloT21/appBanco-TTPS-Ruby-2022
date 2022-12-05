@@ -3,8 +3,15 @@
 <%= render @sucursal %>
 <br></br>
 <div>
+
+<% if can? :manage, @sucursal %> 
   <%= link_to "Editar sucursal", edit_sucursal_path(@sucursal), class: "btn btn-primary" %> |
+<% end %>
+  
   <%= link_to "Ver todas las sucursales", sucursals_path, class: "btn btn-secondary" %>
   <br></br>
+  
+<% if can? :manage, @sucursal %>
   <%= button_to "Eliminar sucursal", @sucursal, method: :delete, class: "btn btn-danger" %>
-</div>
+<% end %>
+  </div>

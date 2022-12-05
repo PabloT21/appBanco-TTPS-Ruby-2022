@@ -6,12 +6,23 @@ class Ability
   def initialize(user)
 
     # Client user permissions
-    can :read, Turn, creador_id: user.id
 
-    if user.empleado?
+    #Turn Permissions
+    if user.cliente?
+      can :read, Turn, creador_id: user.id
+      can :create, Turn
+    
+      #Sucursal Permissions
+      can :read, Sucursal
+
+    elsif user.empleado?
       # Employee user permissions
       can :update, Sucursal 
-      can :facha, Schedule
+      can :read, User
+      can :update,Turn
+      can :read, Turn, sucursal_id: user.sucursal_id
+
+
     elsif user.admin?
       # Admin user permissions
       can :read, :all

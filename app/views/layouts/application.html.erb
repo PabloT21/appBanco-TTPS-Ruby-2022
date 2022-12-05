@@ -88,7 +88,7 @@
                 <span>Turnos</span></a>
             </li>
 
-            <% if can? :manage, @schedule %>
+            <% if can? :read, @schedule %>
             <!-- Nav Item - Horarios -->
             <li class="nav-item">
                 <a class="nav-link" href="/schedules">
@@ -96,12 +96,18 @@
                      <span>Horarios</span></a>
                 </li>
             <% end %>
+
+            <% if can? :read, @user %>
             <!-- Nav Item - Usuarios -->
             <li class="nav-item">
                 <a class="nav-link" href="/listUsers">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                 <span>Clientes</span></a>
             </li>
+            <% end %>
+
+
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -152,7 +158,7 @@
                                 </a>
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     <%= button_to "Cerrar sesión", destroy_user_session_path , method: :delete, class: "btn btn-link" %>
                                 </a>

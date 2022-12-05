@@ -20,5 +20,9 @@
   </div>
   <% end %>
   </div>
-  <%= link_to "Nueva sucursal", new_sucursal_path, class:"btn btn-success" %>
-</div>
+
+  <% if can? :create, @sucursal %> 
+    <%= link_to "Nueva sucursal", new_sucursal_path, class:"btn btn-success" %> 
+  <% end %>
+
+  </div>

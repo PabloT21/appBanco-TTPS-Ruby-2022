@@ -3,9 +3,6 @@
 
 <%= render @schedule %>
 <br></br>
-<% if can? :facha, @schedule %>
-  <h1> Soy admin </h1>
-<% end %>
 
 <div>
   <%= link_to "Editar horario", edit_schedule_path(@schedule), class: "btn btn-primary" %> |
