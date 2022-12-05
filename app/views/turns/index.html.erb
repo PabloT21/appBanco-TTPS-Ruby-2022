@@ -10,6 +10,12 @@
       <div class="card-body">
         <div class=" align-items-center">
             <%= render turn %>
+            <div class="progress progress-sm mr-2">
+              <div class="progress-bar bg-<%= getStateColor(turn.state) %>" role="progressbar"
+              style="width:<%= getPorcentaje(turn.state) %>" aria-valuenow="10" aria-valuemin="0"
+              aria-valuemax="100"></div>
+              </div>
+              <br></br>
        <div>
     <p>
       <%= link_to "Ver turno", turn,  class: "btn btn-info" %>
