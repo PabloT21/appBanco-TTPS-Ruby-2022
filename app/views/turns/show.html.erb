@@ -3,8 +3,25 @@
 <%= render @turn %>
 <br></br>
 <div>
+
+<% if can? :finish, @turn %>
+<div>
+<%= form_for @turn do |f| %>
+  <%= f.text_field :comentario, autocomplete: 'off'%>
+  <br></br>
+  <button type="submit" class="btn btn-success">Atender turno</button>
+<% end %>
+<br></br>
+</div>
+<% end %>
+
+<% if can? :manage, @turn %>
+
   <%= link_to "Editar turno", edit_turn_path(@turn), class: "btn btn-primary" %> |
   <%= link_to "Volver a listado de turnos", turns_path, class: "btn btn-secondary" %>
   <br></br>
+<% end %>
+<% if can? :delete, @turn %>
   <%= button_to "Cancelar turno", @turn, method: :delete, class: "btn btn-danger" %>
+<% end %>
 </div>

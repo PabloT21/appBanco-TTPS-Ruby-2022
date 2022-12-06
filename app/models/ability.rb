@@ -11,15 +11,20 @@ class Ability
     if user.cliente?
       can :read, Turn, creador_id: user.id
       can :create, Turn
-    
+      can :delete, Turn, creador_id: user.id
+
       #Sucursal Permissions
       can :read, Sucursal
 
     elsif user.empleado?
       # Employee user permissions
-      can :update, Sucursal 
+      can :update, Sucursal, id: user.sucursal_id 
+      can :read, Sucursal
+
+      can :finish, Turn, sucursal_id: user.sucursal_id
+
       can :read, User
-      can :update,Turn
+      can :update,Turn, sucursal_id: user.sucursal_id
       can :read, Turn, sucursal_id: user.sucursal_id
 
 

@@ -3,6 +3,7 @@
 # Table name: turns
 #
 #  id           :bigint           not null, primary key
+#  comentario   :string(255)
 #  fecha        :date
 #  hora         :time
 #  reason       :string(255)

@@ -4,10 +4,15 @@ class TurnsController < ApplicationController
 
   # GET /turns or /turns.json
   def index
-    if (current_user.rol == "usuario")
+    if current_user.cliente?
       @turns = Turn.where(
         'creador_id = ?',
         current_user.id
+      ).group(:id)
+    elsif current_user.empleado?
+      @turns = Turn.where(
+        'sucursal_id = ?',
+        current_user.sucursal 
       ).group(:id)
     else
       @turns = Turn.all

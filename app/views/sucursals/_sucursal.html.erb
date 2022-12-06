@@ -2,10 +2,10 @@
 <div class="col mr-2">
      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
         Sucursal <%= sucursal.id %></div>
-    <div class="h5 mb-0 font-weight-bold text-gray-800">Nombre:</div>    <%= sucursal.nombre %>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Dirección:</div>     <%= sucursal.dirección %>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Telefono:</div>     <%= sucursal.telefono %>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Horarios:</div>     <%= sucursal.schedule.name %>
+    <div class="h5 mb-0 font-weight-bold text-gray-800">Nombre:   <span class="text-secondary font-weight-normal"> <%= sucursal.nombre %></span> </div>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Dirección:<span class="text-secondary font-weight-normal"> <%= sucursal.dirección %></span> </div>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Telefono:<span class="text-secondary font-weight-normal"> <%= sucursal.telefono %></span> </div>
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Horarios:<span class="text-secondary font-weight-normal"> <%= sucursal.schedule.name %></span> </div>
         <div class="h5 mb-0 font-weight-bold text-gray-800">Lunes:</div> <%= checkNull(sucursal.schedule.lunesInicio,sucursal.schedule.lunesFin) %> 
         <div class="h5 mb-0 font-weight-bold text-gray-800">Martes:</div> <%= checkNull(sucursal.schedule.martesInicio,sucursal.schedule.martesFin) %> 
         <div class="h5 mb-0 font-weight-bold text-gray-800">Miercoles:</div> <%= checkNull(sucursal.schedule.miercolesInicio,sucursal.schedule.miercolesFin) %> 
@@ -17,4 +17,5 @@
          </div>
          <div class="col-auto">
          </div>
+         <br></br>
 </div>

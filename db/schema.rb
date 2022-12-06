@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_142502) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_192656) do
   create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.time "lunesInicio"
     t.time "lunesFin"
@@ -53,6 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_142502) do
     t.time "hora"
     t.bigint "creador_id"
     t.bigint "empleados_id"
+    t.string "comentario"
     t.index ["creador_id"], name: "index_turns_on_creador_id"
     t.index ["empleados_id"], name: "index_turns_on_empleados_id"
     t.index ["sucursal_id"], name: "index_turns_on_sucursal_id"

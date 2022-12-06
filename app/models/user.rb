@@ -24,7 +24,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  attribute :sucursal, :integer
+  belongs_to :sucursal, class_name: 'Sucursal', foreign_key: :sucursal_id, optional: true
 
   has_many :creados, :class_name => "Turn", :foreign_key => "creador_id"
   has_many :atendidos, :class_name => "Turn", :foreign_key => "empleado_id"

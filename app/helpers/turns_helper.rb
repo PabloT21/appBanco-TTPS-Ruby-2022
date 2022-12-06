@@ -24,4 +24,12 @@ module TurnsHelper
         end
     end
 
+    def showField?(state)
+        if state == 0
+            true
+        else
+            false
+        end
+    end
+
 end
