@@ -32,4 +32,13 @@ module TurnsHelper
         end
     end
 
+    def showFinishTurn?(state)
+        if ((can? :finish, @turn) && showField?(state) )
+            true
+        else
+            false
+        end 
+    end
+
+
 end

@@ -19,10 +19,16 @@
     <%= turn.reason %>
   </p>
 
-  <p>
-    <strong>Estado:</strong>
-    <%= translateState(turn.state) %>
+  <% if turn.state==1 %>
+    <p>
+    <strong>Comentario del empleado:</strong>
+    <%= turn.comentario %>
   </p>
+  <% end %>
+  <p>
+  <strong>Estado:</strong>
+  <span class="font-weight-bold text-<%= getStateColor(turn.state) %>"> <%= translateState(turn.state) %></span>
+</p>
 
 
 </div>

@@ -47,6 +47,21 @@ class TurnsController < ApplicationController
     end
   end
 
+  # POST /turns or /turns.json
+  def finish
+    @turno =  params[:turn]
+    @comentario = @turno[:comentario]
+    @turn = Turn.find(params[:id])
+    @turn.comentario = @comentario
+    @turn.empleados_id = current_user.id
+    @turn.state = 1
+    p @turn
+    p @turn.save
+    p @turn.errors.full_messages
+  end
+
+
+
   # PATCH/PUT /turns/1 or /turns/1.json
   def update
     respond_to do |format|

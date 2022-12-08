@@ -1,0 +1,26 @@
+<h2>Registrate</h2>
+
+<%= form_for(User, as: @user, :url => {:controller => "admin_form", :action => "sendForm"} ) do |f| %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+  <%= f.hidden_field :rol, value: "admin" %>
+  <%= f.hidden_field :sucursal_id, value: 0 %>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+

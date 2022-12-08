@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_schedule, only: %i[ show edit update destroy ]
 
   # GET /schedules or /schedules.json

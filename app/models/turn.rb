@@ -29,7 +29,7 @@
 class Turn < ApplicationRecord
   belongs_to :sucursal
   validates :fecha,:hora,:reason,:sucursal_id, presence: true
-  validate :validate_date
+  validate :validate_date, on: :create
   attribute :state, :integer, default: 0
 
   belongs_to :creador, :class_name => "User"

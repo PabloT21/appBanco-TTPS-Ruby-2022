@@ -5,4 +5,4 @@
 
 <p class="text-dark"><span class="font-weight-bold">Rol: </span><span> <%= current_user.rol %></span> </p>
 
-<p class="text-dark" ><span class="font-weight-bold"> Creado el día: </span><span> <%= current_user.created_at %> </span> </p>
+<p class="text-dark" ><span class="font-weight-bold"> Creado el día: </span><span> <%= current_user.created_at.strftime("%H:%M:%S") %> </span> </p>

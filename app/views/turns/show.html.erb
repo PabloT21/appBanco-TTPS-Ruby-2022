@@ -4,9 +4,9 @@
 <br></br>
 <div>
 
-<% if can? :finish, @turn %>
+<% if showFinishTurn?(@turn.state) %>
 <div>
-<%= form_for @turn do |f| %>
+<%= form_with model: @turn,url: finish_path(:id => @turn.id ), method: :post do |f| %>
   <%= f.text_field :comentario, autocomplete: 'off'%>
   <br></br>
   <button type="submit" class="btn btn-success">Atender turno</button>
@@ -15,13 +15,15 @@
 </div>
 <% end %>
 
-<% if can? :manage, @turn %>
+<% if ((can? :manage, @turn) && (@turn.state == 0)) %>
 
   <%= link_to "Editar turno", edit_turn_path(@turn), class: "btn btn-primary" %> |
-  <%= link_to "Volver a listado de turnos", turns_path, class: "btn btn-secondary" %>
   <br></br>
 <% end %>
-<% if can? :delete, @turn %>
+<% if ((can? :delete, @turn) && (@turn.state == 0)) %>
   <%= button_to "Cancelar turno", @turn, method: :delete, class: "btn btn-danger" %>
 <% end %>
+<br></br>
+<%= link_to "Volver a listado de turnos", turns_path, class: "btn btn-secondary" %>
+
 </div>
