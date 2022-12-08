@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   end
   
   as :user do
-    get "formAdmin", to: 'admin_form#newForm'
-    post "sendAdmin", to: 'admin_form#sendForm'
+    get "formAdmin", to: 'admin_form#newAdmin'
+    post "sendAdmin", to: 'admin_form#sendAdminForm'
+
+    get "formEmpleado", to: 'admin_form#newEmpleado'
+    post "sendEmpleado", to: 'admin_form#sendEmpleadoForm'
   end
   
   post "finish", to:"turns#finish" 

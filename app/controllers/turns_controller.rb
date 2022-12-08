@@ -55,7 +55,6 @@ class TurnsController < ApplicationController
     @turn.comentario = @comentario
     @turn.empleados_id = current_user.id
     @turn.state = 1
-    p @turn
     p @turn.save
     p @turn.errors.full_messages
   end

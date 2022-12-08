@@ -2,11 +2,11 @@ class AdminFormController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
-  def newForm
+  def newAdmin
     @user = User.new
   end
 
-  def sendForm
+  def sendAdminForm
     @user = User.new
     @data = params[:user]
     @user.email = @data[:email]
@@ -15,11 +15,37 @@ class AdminFormController < Devise::RegistrationsController
     @user.sucursal_id = 0
 
     if @user.save
-      redirect_to user_path, :notice => 'New Administrator has been added'
+      redirect_to "/formAdmin", :notice => 'Se agrego un nuevo administrador!'
     else
-      render :action => "newForm"
+      render :action => "newAdmin"
     end
   end
+
+  def newEmpleado
+    @user = User.new
+  end
+
+  def sendEmpleadoForm
+    @user = User.new
+    @data = params[:user]
+    @user.email = @data[:email]
+    @user.rol = @data[:rol]
+    @user.password = @data[:password]
+    if (@data[:sucursal_id].empty?)
+      @user.sucursal_id = @data[:sucursal_id]
+      flash[:errorF] = "Tenes que ingresar una sucursal valida"
+      redirect_to "/formEmpleado"
+    else
+      if @user.save
+        redirect_to "/formEmpleado", :notice => 'Se agrego un nuevo empleado!'
+      else
+        flash[:errorF] = flash[:notice].to_a.concat resource.errors.full_messages
+        render :action => "newEmpleado"
+      end
+    end
+  end
+
+
 
   # GET /resource/sign_up
   def new
