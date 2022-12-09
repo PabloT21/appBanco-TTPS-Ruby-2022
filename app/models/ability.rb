@@ -4,7 +4,6 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     # Client user permissions
 
     #Turn Permissions
@@ -12,6 +11,7 @@ class Ability
       can :read, Turn, creador_id: user.id
       can :create, Turn
       can :delete, Turn, creador_id: user.id
+      can :update, Turn, creador_id: user.id, state: 0
 
       #Sucursal Permissions
       can :read, Sucursal

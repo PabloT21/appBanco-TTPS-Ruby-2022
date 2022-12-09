@@ -29,7 +29,7 @@
 class Turn < ApplicationRecord
   belongs_to :sucursal
   validates :fecha,:hora,:reason,:sucursal_id, presence: true
-  validate :validate_date, on: :create
+  validate :validate_date
   attribute :state, :integer, default: 0
 
   belongs_to :creador, :class_name => "User"
@@ -42,7 +42,7 @@ class Turn < ApplicationRecord
     if sucursal.nil?
       errors.add(:sucursal_id, " la sucursal no existe")
     else
-        if(fecha > DateTime.current.beginning_of_day)
+        if((fecha > DateTime.current.beginning_of_day) || (state == 1))
           day = fecha.strftime("%A")
           hour = hora.strftime("%H:%M:%S")
           schedule = Schedule.find_by_id(sucursal.schedule_id)

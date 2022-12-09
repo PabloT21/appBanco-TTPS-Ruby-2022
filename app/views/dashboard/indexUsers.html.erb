@@ -5,8 +5,9 @@
       <div class="card-body">
         <div class="align-items-center">
           
-          <%= user.email %>
-          <span>
+        <p class="text-dark" ><span class="font-weight-bold"> Email: </span><span> <%= user.email%> </span> </p>
+        <span>
+            <p class="text-dark" ><span class="font-weight-bold"> Creado el día: </span><span> <%= user.created_at.strftime("%D") %> </span> </p>
           </span>
         </div>
       </div>

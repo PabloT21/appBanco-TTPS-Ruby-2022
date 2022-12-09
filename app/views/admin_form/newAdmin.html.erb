@@ -1,6 +1,10 @@
 <h2>Crear un usuario administrador</h2>
 <p style="color: green"><%= notice %></p>
-
+<% flash.each do |type, msg| %>
+    <div>
+      <p style ="color:red"><%= msg %></p>
+    </div>
+  <% end %>
 <%= form_for(User, as: @user, :url => {:controller => "admin_form", :action => "sendAdminForm"} ) do |f| %>
 
   <div class="field">

@@ -20,6 +20,10 @@
   </p>
 
   <% if turn.state==1 %>
+  <p>
+  <strong> Atendido por: </strong>
+  <p><%= showEmployeeEmail(turn.empleados_id) %></p>
+  </p>
     <p>
     <strong>Comentario del empleado:</strong>
     <%= turn.comentario %>

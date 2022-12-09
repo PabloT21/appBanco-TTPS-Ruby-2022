@@ -1,6 +1,6 @@
 class SucursalsController < ApplicationController
-  before_action :set_sucursal, only: %i[ show edit update destroy ]
   load_and_authorize_resource
+  before_action :set_sucursal, only: %i[ show edit update destroy ]
 
   # GET /sucursals or /sucursals.json
   def index

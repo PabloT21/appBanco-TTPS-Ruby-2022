@@ -40,5 +40,9 @@ module TurnsHelper
         end 
     end
 
+    def showEmployeeEmail(id)
+        @user = User.find(id)
+        @user.email
+    end
 
 end

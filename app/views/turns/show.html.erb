@@ -15,11 +15,11 @@
 </div>
 <% end %>
 
-<% if ((can? :manage, @turn) && (@turn.state == 0)) %>
-
-  <%= link_to "Editar turno", edit_turn_path(@turn), class: "btn btn-primary" %> |
-  <br></br>
+<% if (can? :update, @turn) %>
+<%= link_to "Editar turno", edit_turn_path(@turn), class: "btn btn-primary" %> 
 <% end %>
+<br></br>
+
 <% if ((can? :delete, @turn) && (@turn.state == 0)) %>
   <%= button_to "Cancelar turno", @turn, method: :delete, class: "btn btn-danger" %>
 <% end %>

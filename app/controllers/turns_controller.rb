@@ -28,9 +28,9 @@ class TurnsController < ApplicationController
     @turn = Turn.new
   end
 
-  # GET /turns/1/edit
-  def edit
-  end
+ # GET /turns/1/edit
+ def edit
+ end
 
   # POST /turns or /turns.json
   def create
@@ -50,26 +50,32 @@ class TurnsController < ApplicationController
   # POST /turns or /turns.json
   def finish
     @turno =  params[:turn]
-    @comentario = @turno[:comentario]
-    @turn = Turn.find(params[:id])
-    @turn.comentario = @comentario
-    @turn.empleados_id = current_user.id
-    @turn.state = 1
-    p @turn.save
-    p @turn.errors.full_messages
+    if @turno[:comentario].empty?
+      flash[:errorF] = "El comentario no puede estar vacío"
+      redirect_to "/turns"
+    else
+      @comentario = @turno[:comentario]
+      @turn = Turn.find(params[:id])
+      @turn.comentario = @comentario
+      @turn.empleados_id = current_user.id
+      @turn.state = 1
+      @turn.save
+      redirect_to "/turns", :notice => 'El turno fue atendido correctamente!'
+    end
   end
 
 
 
   # PATCH/PUT /turns/1 or /turns/1.json
   def update
+    
     respond_to do |format|
       if @turn.update(turn_params)
-        format.html { redirect_to turn_url(@turn), notice: "Turn was successfully updated." }
-        format.json { render :show, status: :ok, location: @turn }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @turn.errors, status: :unprocessable_entity }
+          format.html { redirect_to turn_url(@turn), notice: "Turn was successfully updated." }
+          format.json { render :show, status: :ok, location: @turn }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @turn.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -2,27 +2,40 @@
 
 <h1>Turnos</h1>
 
+<% flash.each do |type, msg| %>
+  <div>
+    <p style ="color:red"><%= msg %></p>
+  </div>
+<% end %>
+
 <div id="turns">
 <div class="container-fluid d-flex flex-wrap">
   <% @turns.each do |turn| %>
     <div class=" col-xl-3 col-md-6 mb-4">
     <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
         <div class=" align-items-center">
             <%= render turn %>
-            <div class="progress progress-sm mr-2">
-              <div class="progress-bar bg-<%= getStateColor(turn.state) %>" role="progressbar"
-              style="width:<%= getPorcentaje(turn.state) %>" aria-valuenow="10" aria-valuemin="0"
-              aria-valuemax="100"></div>
-              </div>
+           
               <br></br>
        <div>
     <p>
-      <%= link_to "Ver turno", turn,  class: "btn btn-info" %>
     </p>
     </div>
+ 
+
     </div>
+    
     </div>
+    <div class="card-footer">
+    <div class="progress progress-sm mr-2">
+    <div class="progress-bar bg-<%= getStateColor(turn.state) %>" role="progressbar"
+    style="width:<%= getPorcentaje(turn.state) %>" aria-valuenow="10" aria-valuemin="0"
+    aria-valuemax="100"></div>
+    </div>
+    <br></br>
+    <%= link_to "Ver turno", turn,  class: "btn btn-primary btn-sm btn-block" %>
+ </div>
   </div>
 </div>
   <% end %>

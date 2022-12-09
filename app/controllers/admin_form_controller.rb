@@ -14,10 +14,14 @@ class AdminFormController < Devise::RegistrationsController
     @user.password = @data[:password]
     @user.sucursal_id = 0
 
-    if @user.save
-      redirect_to "/formAdmin", :notice => 'Se agrego un nuevo administrador!'
+    if not (@data[:password] == @data[:password_confirmation])
+      flash[:errorF] = "Las contraseñas deben coincidir"
+      redirect_to "/formAdmin"
+    elsif @user.save
+      redirect_to "/", :notice => 'Se agrego un nuevo administrador!'
     else
-      render :action => "newAdmin"
+      flash[:errorF] = flash[:errorF].to_a.concat resource.errors.full_messages
+      redirect_to "/formAdmin"
     end
   end
 
@@ -32,15 +36,18 @@ class AdminFormController < Devise::RegistrationsController
     @user.rol = @data[:rol]
     @user.password = @data[:password]
     if (@data[:sucursal_id].empty?)
-      @user.sucursal_id = @data[:sucursal_id]
       flash[:errorF] = "Tenes que ingresar una sucursal valida"
       redirect_to "/formEmpleado"
     else
-      if @user.save
-        redirect_to "/formEmpleado", :notice => 'Se agrego un nuevo empleado!'
+      @user.sucursal_id = @data[:sucursal_id]
+    if not (@data[:password] == @data[:password_confirmation])
+      flash[:errorF] = "Las contraseñas deben coincidir"
+      redirect_to "/formEmpleado"
+      elsif @user.save
+        redirect_to "/", :notice => 'Se agrego un nuevo empleado!'
       else
         flash[:errorF] = flash[:notice].to_a.concat resource.errors.full_messages
-        render :action => "newEmpleado"
+        redirect_to "/formEmpleado"
       end
     end
   end
