@@ -44,12 +44,16 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <% if can? :newAdmin, AdminFormController %>
+
+
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Manejo de usuarios
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
@@ -64,13 +68,14 @@
                     </div>
                 </div>
             </li>
+            <% end %>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Turnos y sucursales
             </div>
 
             <!-- Nav Item - Sucursales -->
@@ -131,6 +136,8 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                 <h1 class="text-primary font-weight-bold">Banco app <i class="fas fa-building"></i>                
                 </h1>
+                <span>ADMINISTRADOR</SPAN>
+                &nbsp
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -142,11 +149,16 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <% if user_signed_in? %>
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
+               
+                    <!-- Nav Item - User Information -->
+            
+                    <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Logeado con <%= current_user.email %></span>
+   
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> 
+                                <%= current_user.email  %> 
+                                </span>
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                             </a>
                             <!-- Dropdown - User Information -->

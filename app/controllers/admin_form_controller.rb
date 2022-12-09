@@ -1,4 +1,5 @@
 class AdminFormController < Devise::RegistrationsController
+  authorize_resource :class => false
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
@@ -52,7 +53,8 @@ class AdminFormController < Devise::RegistrationsController
     end
   end
 
-
+  def passwordForm
+  end
 
   # GET /resource/sign_up
   def new

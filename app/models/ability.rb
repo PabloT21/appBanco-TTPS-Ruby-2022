@@ -8,6 +8,8 @@ class Ability
 
     #Turn Permissions
     if user.cliente?
+
+      can :passwordForm, AdminFormController
       can :read, Turn, creador_id: user.id
       can :create, Turn
       can :delete, Turn, creador_id: user.id
@@ -18,6 +20,8 @@ class Ability
 
     elsif user.empleado?
       # Employee user permissions
+      can :passwordForm, AdminFormController
+
       can :update, Sucursal, id: user.sucursal_id 
       can :read, Sucursal
 
@@ -30,6 +34,15 @@ class Ability
 
     elsif user.admin?
       # Admin user permissions
+      can :passwordForm, AdminFormController
+
+
+      can :newAdmin, AdminFormController
+      can :sendAdmin, AdminFormController
+
+      can :newEmpleado, AdminFormController
+      can :sendEmpleado, AdminFormController
+
       can :read, :all
       can :create, :all
       can :manage, :all

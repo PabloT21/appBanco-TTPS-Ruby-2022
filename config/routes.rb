@@ -16,12 +16,13 @@ Rails.application.routes.draw do
     post "sendEmpleado", to: 'admin_form#sendEmpleadoForm'
   end
   
+  get "passwordForm", to: 'dashboard#passwordForm'
+
+  post "updatePassword", to: 'dashboard#updatePassword'
+
   post "finish", to:"turns#finish" 
 
   get "profile", to: "dashboard#profile"
-
-
-  get "formPersonal", to: "user_forms#newPersonal"
 
   get "listUsers", to:"dashboard#indexUsers"
 
