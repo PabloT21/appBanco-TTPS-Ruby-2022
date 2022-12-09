@@ -1,13 +1,15 @@
 class AdminFormController < Devise::RegistrationsController
-  authorize_resource :class => false
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
   def newAdmin
+    authorize! :createPrivUsers, :adForm
     @user = User.new
   end
 
   def sendAdminForm
+    authorize! :createPrivUsers, :adForm
+
     @user = User.new
     @data = params[:user]
     @user.email = @data[:email]
@@ -27,10 +29,12 @@ class AdminFormController < Devise::RegistrationsController
   end
 
   def newEmpleado
+    authorize! :createPrivUsers, :adForm
     @user = User.new
   end
 
   def sendEmpleadoForm
+    authorize! :createPrivUsers, :adForm
     @user = User.new
     @data = params[:user]
     @user.email = @data[:email]

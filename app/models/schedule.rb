@@ -37,6 +37,7 @@ class Schedule < ApplicationRecord
     has_one :sucursal
 
     validates :name, uniqueness: true
+    validates :name, presence: true
     # Valido que el fin sea mayor al inicio
     validates :lunesFin, comparison: { greater_than: :lunesInicio } , if: :lunesInicio?
     validates :martesFin, comparison: { greater_than: :martesInicio }, if: :martesInicio?

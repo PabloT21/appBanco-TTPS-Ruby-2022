@@ -83,7 +83,6 @@ class TurnsController < ApplicationController
   # DELETE /turns/1 or /turns/1.json
   def destroy
     @turn.destroy
-
     respond_to do |format|
       format.html { redirect_to turns_url, notice: "Turn was successfully destroyed." }
       format.json { head :no_content }

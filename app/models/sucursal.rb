@@ -22,7 +22,7 @@
 class Sucursal < ApplicationRecord
   belongs_to :schedule
   has_many :users
-  validates :schedule_id, uniqueness: true
+  validates :schedule_id, :nombre, uniqueness: true
   validates :dirección, :nombre, :telefono, presence: true
 
 

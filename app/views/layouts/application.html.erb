@@ -44,7 +44,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <% if can? :newAdmin, AdminFormController %>
+            <% if can? :createPrivUsers, :adForm %>
 
 
             <!-- Heading -->
@@ -165,8 +165,8 @@
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in text-center"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item text-info text-center" href="/profile">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-300"></i>
+                                    <span>Perfil</span>
                                 </a>
 
                                 <div class="dropdown-divider"></div>

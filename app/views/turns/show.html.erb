@@ -20,7 +20,7 @@
 <% end %>
 <br></br>
 
-<% if ((can? :delete, @turn) && (@turn.state == 0)) %>
+<% if ((can? :destroy, @turn) && (@turn.state == 0)) %>
   <%= button_to "Cancelar turno", @turn, method: :delete, class: "btn btn-danger" %>
 <% end %>
 <br></br>

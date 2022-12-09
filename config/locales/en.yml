@@ -31,3 +31,66 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: no puede estar en blanco
+            email:
+              blank: no puede estar en blanco
+              invalid: es invalido
+            password:
+              too_short: es demasiado corta (Mínimo 6 caracteres)
+        sucursal:
+          attributes:
+            nombre:
+              blank: no puede estar vacío
+              taken: ya existe, elegí otro
+            dirección:
+              blank: no puede estar vacía
+            telefono:
+              blank: no puede estar vacío
+        turn:
+          attributes:
+            fecha:
+              blank: no puede estar vacía
+            reason:
+              blank: no puede estar vacía
+            hora:
+              blank: no puede estar vacía
+            sucursal_id:
+              blank: no puede estar vacía
+              required: no existe
+        schedule:
+          name:
+            blank: no puede estar vacío
+          lunesInicio:
+            blank: no puede estar vacío
+          lunesFin:
+            blank: no puede estar vacío
+          martesInicio:
+            blank: no puede estar vacío
+          martesFin:
+            blank: no puede estar vacío
+          miercolesInicio:
+            blank: no puede estar vacío
+          miercolesFin:
+            blank: no puede estar vacío
+          juevesInicio:
+            blank: no puede estar vacío
+          juevesFin:
+            blank: no puede estar vacío
+          viernesInicio:
+            blank: no puede estar vacío
+          viernesFin:
+            blank: no puede estar vacío
+          sabadoInicio:
+            blank: no puede estar vacío
+          sabadoFin:
+            blank: no puede estar vacío
+          domingoInicio:
+            blank: no puede estar vacío
+          domingoFin:
+            blank: no puede estar vacío                                                            

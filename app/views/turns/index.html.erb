@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Turnos</h1>
+<% if notice.blank? %>
 
 <% flash.each do |type, msg| %>
   <div>
     <p style ="color:red"><%= msg %></p>
   </div>
+<% end %>
 <% end %>
 
 <div id="turns">
@@ -15,6 +17,7 @@
     <div class="card border-left-primary shadow h-100 py-2">
       <div class="card-body d-flex flex-column">
         <div class=" align-items-center">
+        
             <%= render turn %>
            
               <br></br>
