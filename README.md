@@ -1,24 +1,16 @@
-# README
+# Banco APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Aplicación realizada para la materia de TTPS Opción Ruby 2022
+## Alumno: Pablo Terrone
 
-Things you may want to cover:
+## Especificaciones técnicas:
 
-* Ruby version
+* Base de datos MySQL
 
-* System dependencies
+* Versión de Ruby: 3.1.2
 
-* Configuration
+* Versión de Ruby on Rails: 7.0.4
 
-* Database creation
+## Comentarios sobre decisiones de diseño:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Decidi hacer un borrado físico al cancelar un turno, ya que no debian verse en la aplicación por lo que considere innecesario hacer un borrado lógico
