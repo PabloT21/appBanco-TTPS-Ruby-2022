@@ -30,6 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  global:
+    forms:
+      submit: Enviar
+      messages:
+        errors:
+          one: "Un error prohibio que se guarde"
+          other: "%{count} errores prohibieron que esto se guarde"
   hello: "Hello world"
   activerecord:
     errors:
@@ -63,6 +70,7 @@ en:
             sucursal_id:
               blank: no puede estar vacía
               required: no existe
+              invalid: debe existir
         schedule:
           name:
             blank: no puede estar vacío

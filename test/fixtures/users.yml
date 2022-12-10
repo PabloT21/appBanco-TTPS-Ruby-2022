@@ -11,7 +11,7 @@
 #  rol                    :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  sucursal_id            :bigint           not null
+#  sucursal_id            :integer
 #
 # Indexes
 #

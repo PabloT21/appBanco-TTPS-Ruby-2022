@@ -28,7 +28,7 @@ class Ability
       can :finish, Turn, sucursal_id: user.sucursal_id
 
       can :read, User
-      can :update,Turn, sucursal_id: user.sucursal_id
+      can :update,Turn, sucursal_id: user.sucursal_id, state: 0
       can :read, Turn, sucursal_id: user.sucursal_id
 
 
@@ -36,11 +36,8 @@ class Ability
       # Admin user permissions  
       can :createPrivUsers, :adForm
 
-      can :update,Turn, state: 0
-      can :destroy,Turn, state: 0
-
       can :read, :all
-      can :create, :all
+  
       can :manage, User
       can :manage, Sucursal
       can :manage, Schedule

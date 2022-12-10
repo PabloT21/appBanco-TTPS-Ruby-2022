@@ -11,7 +11,7 @@
 #  rol                    :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  sucursal_id            :bigint           not null
+#  sucursal_id            :integer
 #
 # Indexes
 #
@@ -24,12 +24,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :sucursal, class_name: 'Sucursal', foreign_key: :sucursal_id, optional: true
+  belongs_to :sucursal, :class_name => 'Sucursal', optional: true, default: nil
 
   has_many :creados, :class_name => "Turn", :foreign_key => "creador_id"
   has_many :atendidos, :class_name => "Turn", :foreign_key => "empleado_id"
 
-  after_create :set_default_rol, :if => :new_record?
+  before_create :set_default_rol, :if => :new_record?
   def set_default_rol
     self.rol ||= "usuario"
   end

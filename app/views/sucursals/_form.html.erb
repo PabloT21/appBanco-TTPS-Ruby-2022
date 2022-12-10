@@ -1,7 +1,7 @@
 <%= form_with(model: sucursal) do |form| %>
   <% if sucursal.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(sucursal.errors.count, "error") %> prohibited this sucursal from being saved:</h2>
+      <h2><%= pluralize(sucursal.errors.count, "error") %> prohibieron que la sucursal se guarde:</h2>
 
       <ul>
         <% sucursal.errors.each do |error| %>

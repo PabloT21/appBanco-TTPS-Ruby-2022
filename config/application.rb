@@ -12,7 +12,7 @@ module BancoApp
     config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
-    #
+    config.active_record.belongs_to_required_by_default =false
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #

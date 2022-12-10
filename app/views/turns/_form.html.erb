@@ -1,7 +1,7 @@
 <%= form_with(model: turn) do |form| %>
   <% if turn.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(turn.errors.count, "error") %> prohibited this turn from being saved:</h2>
+      <h2><%= pluralize(turn.errors.count, "error") %> prohibieron que este turno se guarde:</h2>
 
       <ul>
         <% turn.errors.each do |error| %>
