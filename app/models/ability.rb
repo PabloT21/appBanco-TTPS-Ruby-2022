@@ -27,6 +27,8 @@ class Ability
 
       can :finish, Turn, sucursal_id: user.sucursal_id, state: 0
 
+      can :read, :userList
+
       can :read, User
       can :read, Turn, sucursal_id: user.sucursal_id
 
@@ -34,6 +36,9 @@ class Ability
     elsif user.admin?
       # Admin user permissions  
       can :createPrivUsers, :adForm
+
+      can :read, :userList
+
 
       can :read, :all
   

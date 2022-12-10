@@ -10,7 +10,12 @@ def profile
 end
 
 def indexUsers
-    @users = User.where(rol: ["usuario"])
+    authorize! :read, :userList
+    if (current_user.empleado?)
+        @users = User.where(rol: ["usuario"])
+    elsif current_user.admin?
+        @users = User.all
+    end
 end
 
 def passwordForm
