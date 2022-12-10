@@ -93,7 +93,7 @@
                 <span>Turnos</span></a>
             </li>
 
-            <% if can? :read, @schedule %>
+            <% if can? :read, Schedule %>
             <!-- Nav Item - Horarios -->
             <li class="nav-item">
                 <a class="nav-link" href="/schedules">
@@ -106,8 +106,8 @@
             <!-- Nav Item - Usuarios -->
             <li class="nav-item">
                 <a class="nav-link" href="/listUsers">
-                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                <span>Clientes</span></a>
+                <i class="fas fa-user fa-sm fa-fw mr-2"></i>
+                <span>Usuarios</span></a>
             </li>
             <% end %>
 

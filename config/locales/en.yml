@@ -30,6 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  errors:
+    messages:
+      blank: no puede estar en blanco
+      greater_than: debe ser mayor a %{count}
+      required: debe existir
+      taken: ya esta en uso
   global:
     forms:
       submit: Enviar
@@ -82,6 +88,7 @@ en:
             blank: no puede estar vacío
           martesFin:
             blank: no puede estar vacío
+            greater_than: debe ser mas grande que
           miercolesInicio:
             blank: no puede estar vacío
           miercolesFin:

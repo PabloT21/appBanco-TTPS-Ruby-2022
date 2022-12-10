@@ -45,4 +45,8 @@ module TurnsHelper
         @user.email
     end
 
+    def showSucursalName(id)
+        @sucursal = Sucursal.find(id)
+        @sucursal.nombre
+    end
 end

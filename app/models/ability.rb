@@ -14,15 +14,12 @@ class Ability
       can :create, Turn
       can :destroy, Turn, creador_id: user.id, state: 0
       can :update, Turn, creador_id: user.id, state: 0
-
-      #Sucursal Permissions
       can :read, Sucursal
 
     elsif user.empleado?
       # Employee user permissions
       can :passwordForm, AdminFormController
 
-      can :update, Sucursal, id: user.sucursal_id 
       can :read, Sucursal
 
       can :finish, Turn, sucursal_id: user.sucursal_id, state: 0
@@ -35,6 +32,8 @@ class Ability
 
     elsif user.admin?
       # Admin user permissions  
+      can :passwordForm, AdminFormController
+
       can :createPrivUsers, :adForm
 
       can :read, :userList
