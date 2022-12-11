@@ -68,7 +68,6 @@ class TurnsController < ApplicationController
 
   # PATCH/PUT /turns/1 or /turns/1.json
   def update
-    
     respond_to do |format|
       if @turn.update(turn_params)
           format.html { redirect_to turn_url(@turn), notice: "Turn was successfully updated." }

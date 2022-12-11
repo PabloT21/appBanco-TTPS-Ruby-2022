@@ -18,3 +18,12 @@
 * Decidi guardar la referencia al empleado que atiende un turno como una clave foranea (usando el id del empleado), ya que si en el futuro quiero mostrar otro campo del usuario (Por ejemplo, agrego nombre de usuario y quiero mostrar eso) no hay que actualizar todos los datos de referencia. El problema es que esto puede generar problemas si se hace un borrado físico del usuario que lo atendio.
 
 * Le di a los usuarios normales permisos para poder ver los datos de todas las sucursales, para que puedan consultar los horarios.
+
+
+## Datos relevantes generados en el archivo seed:
+
+### Usuarios:
+
+### Turnos:
+
+### Sucursales:

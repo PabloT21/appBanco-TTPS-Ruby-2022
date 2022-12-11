@@ -44,6 +44,8 @@ class Turn < ApplicationRecord
     else
         if((fecha > DateTime.current.beginning_of_day) || (state == 1))
           day = fecha.strftime("%A")
+          p "----"
+          p day
           hour = hora.strftime("%H:%M:%S")
           schedule = Schedule.find_by_id(sucursal.schedule_id)
           if (!schedule.validate_time(day,hour))

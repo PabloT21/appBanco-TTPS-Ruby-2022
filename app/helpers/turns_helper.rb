@@ -49,4 +49,12 @@ module TurnsHelper
         @sucursal = Sucursal.find(id)
         @sucursal.nombre
     end
+
+    def getDefaultSucursal(turn)
+        if(turn.sucursal_id.blank?)
+            ""
+        else
+            turn.sucursal_id.to_s
+        end
+    end
 end
