@@ -14,6 +14,10 @@
   <%= turn.hora.strftime("%H:%M:%S") %>
 </p>
 
+<p>
+<strong> Solicitado por: </strong>
+<%= showUserMail(turn.creador_id)%>
+</p>
   <p>
     <strong>Motivo:</strong>
     <%= turn.reason %>

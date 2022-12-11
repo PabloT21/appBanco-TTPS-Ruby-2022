@@ -50,11 +50,12 @@ module TurnsHelper
         @sucursal.nombre
     end
 
-    def getDefaultSucursal(turn)
-        if(turn.sucursal_id.blank?)
-            ""
+    def showUserMail(id)
+        @user = User.find(id)
+        if (@user.blank?)
+            "Usuario eliminado"
         else
-            turn.sucursal_id.to_s
+            @user.email
         end
     end
 end
