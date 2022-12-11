@@ -24,16 +24,16 @@
 
 #### Clientes:
 * Email: juanperez@gmail.com ,Contraseña: dominguez
-**  Tiene un turno para la sucursal 1 y otro para la sucursal 2
+    -Tiene un turno para la sucursal 1 y otro para la sucursal 2
 
 * Email: ignacio@gmail.com ,Contraseña: ignacio
-**  Tiene un turno para la sucursal 2
+    -Tiene un turno para la sucursal 2
 
 #### Empleados de sucursal:
 * Email: tomasdominguez@gmail.com ,Contraseña: dominguez
-** Empleado de SUCURSAL 1
+    -Empleado de SUCURSAL 1
 * Email: martin@gmail.com ,Contraseña: martin
-** Empleado de SUCURSAL 2
+    -Empleado de SUCURSAL 2
 
 #### Administrador:
 * Email: admin123@gmail.com ,Contraseña: abcd1234
