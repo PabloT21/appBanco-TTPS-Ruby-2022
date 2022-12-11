@@ -23,7 +23,7 @@
 ### Usuarios:
 
 #### Clientes:
-* Email: juanperez@gmail.com ,Contraseña: dominguez .Tiene un turno para la **sucursal 1** y otro para la **sucursal 2**
+* Email: juanperez@gmail.com ,Contraseña: dominguez .Tiene un turno para la **sucursal 1** 
 
 * Email: ignacio@gmail.com ,Contraseña: ignacio .Tiene un turno para la **sucursal 2**
 
