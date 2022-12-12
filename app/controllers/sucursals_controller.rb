@@ -50,7 +50,8 @@ class SucursalsController < ApplicationController
 
   # DELETE /sucursals/1 or /sucursals/1.json
   def destroy
-    @turnos = Turn.where(state: 0,sucursal_id: @sucursal.id)
+    @turnos = Turn.where(sucursal_id: @sucursal.id)
+  
     if(@turnos.empty?)
     @sucursal.destroy
     respond_to do |format|
@@ -58,7 +59,7 @@ class SucursalsController < ApplicationController
       format.json { head :no_content }
     end
     else
-      @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene turnos pendientes")
+      @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene turnos asignados")
       respond_to do |format|
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sucursal.errors, status: :unprocessable_entity }
