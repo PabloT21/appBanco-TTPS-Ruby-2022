@@ -17,6 +17,7 @@
 
 * Le di a los usuarios normales permisos para poder ver los datos de todas las sucursales, para que puedan consultar los horarios.
 
+* No realice un bloqueo para evitar que se pueda cambiar el horario de una sucursal si tiene turnos pendientes por que si se da el caso de que se solicito un turno para dentro de mucho tiempo, los horarios no se podrian cambiar hasta ese momento.
 
 ## Datos relevantes generados en el archivo seed:
 
