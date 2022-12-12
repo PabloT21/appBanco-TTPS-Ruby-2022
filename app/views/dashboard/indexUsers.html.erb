@@ -10,10 +10,20 @@
         <p class="text-dark" ><span class="font-weight-bold"> Rol: </span><span> <%= user.rol%> </span> </p>
 
         <span>
-            <p class="text-dark" ><span class="font-weight-bold"> Creado el día: </span><span> <%= user.created_at.strftime("%D") %> </span> </p>
+            <p class="text-dark" ><span class="font-weight-bold"> Creado el día: </span><span> <%= user.created_at.strftime("%D") %> </span> </p> 
+          
           </span>
-        </div>
+          <% if user.empleado? %>
+          <p class="text-dark" ><span class="font-weight-bold"> Sucursal: </span><span> <%= showSucursalName(user.sucursal_id) %> </span> </p>
+          <% end%>
+
+          </div>
       </div>
+      <% if user.empleado? %>
+      <div class="card-footer">
+      <%= link_to "Cambiar sucursal", editEmpleado_path(:user_id => user.id), class:"btn btn-success" %>
+      </div>
+      <% end %>
   </div>
   </div>
   <% end %>

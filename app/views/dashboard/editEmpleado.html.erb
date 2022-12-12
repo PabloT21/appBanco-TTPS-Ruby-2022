@@ -1,0 +1,20 @@
+<h2> Cambiar sucursal </h2>
+
+<p style="color: green"><%= notice %></p>
+<% if notice.blank? %>
+<% flash.each do |type, msg| %>
+    <div>
+      <p style ="color:red"><%= msg %></p>
+    </div>
+  <% end %>
+  <% end %>
+<p><span class="font-weight-bold">Usuario: </span> <%= @usuario.email %></p>
+  <%= form_with url: updateSucursal_path(:usuario_id => @usuario), method: :post do |f| %>
+  <div>
+  <%= f.label :sucursal_id, style: "display: block", class:"font-weight-bold" %>
+  <%= f.select(:idSucursal, options_from_collection_for_select(Sucursal.all, :id, :nombre, @usuario.sucursal_id), include_blank: true) %>
+</div>
+    <br></br>
+    <%= f.submit "Cambiar sucursal" %>
+
+  <% end %>

@@ -31,7 +31,8 @@ class Ability
 
 
     elsif user.admin?
-      # Admin user permissions  
+      # Admin user permissions 
+      can :update, :userSucursal 
       can :passwordForm, AdminFormController
 
       can :createPrivUsers, :adForm

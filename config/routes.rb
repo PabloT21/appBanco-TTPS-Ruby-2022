@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   post "updatePassword", to: 'dashboard#updatePassword'
 
+  get "editEmpleado", to: 'dashboard#editEmpleado'
+  post "updateSucursal", to: 'dashboard#updateSucursal'
+
   post "finish", to:"turns#finish" 
 
   get "profile", to: "dashboard#profile"

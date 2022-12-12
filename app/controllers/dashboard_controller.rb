@@ -21,6 +21,41 @@ end
 def passwordForm
 end
 
+
+def editEmpleado
+    authorize! :update, :userSucursal 
+    @usuario = User.find(params[:user_id])
+
+end
+
+def updateSucursal
+    status = true
+    authorize! :update, :userSucursal 
+    if params[:idSucursal].blank?
+        status = false
+        flash[:errorF] = "Tenes que ingresar una sucursal"
+    else
+        @sucursal = Sucursal.find(params[:idSucursal])
+        if (@sucursal.blank?)
+            status = false
+            flash[:errorF] = "No existe esa sucursal"
+        end
+    end
+    if (status)
+        @user = User.find(params[:usuario_id])
+        @user.sucursal_id = params[:idSucursal]
+        if (@user.save)
+            redirect_to "/editEmpleado", :notice => 'Se modifico la sucursal correctamente!'
+        else
+            flash[:errorF] = "Lo sentimos! Algo salio mal"
+            redirect_to "/editEmpleado"
+        end
+    else
+        redirect_to "/editEmpleado"
+    end
+end
+
+
 def updatePassword
     @user = User.find(current_user.id)
     status = true
