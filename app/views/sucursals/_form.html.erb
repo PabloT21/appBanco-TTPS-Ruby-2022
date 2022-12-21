@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :schedule_id, style: "display: block" %>
-  <%= form.select(:schedule_id, options_from_collection_for_select(Schedule.all, :id, :name, @sucursal.schedule_id), include_blank: true) %>
+  <%= form.select(:schedule_id, options_from_collection_for_select(@schedules, :id, :name, @sucursal.schedule_id), include_blank: true) %>
   </div>
         <br></br>
   <div>

@@ -24,6 +24,7 @@ end
 
 def editEmpleado
     authorize! :update, :userSucursal 
+    @sucursals = Sucursal.all
     @usuario = User.find(params[:user_id])
 
 end

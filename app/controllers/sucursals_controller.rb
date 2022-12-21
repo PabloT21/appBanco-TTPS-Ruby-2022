@@ -14,6 +14,7 @@ class SucursalsController < ApplicationController
   # GET /sucursals/new
   def new
     @sucursal = Sucursal.new
+    @schedules = Schedule.all
   end
 
   # GET /sucursals/1/edit

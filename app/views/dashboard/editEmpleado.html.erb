@@ -12,7 +12,7 @@
   <%= form_with url: updateSucursal_path(:usuario_id => @usuario), method: :post do |f| %>
   <div>
   <%= f.label :sucursal_id, style: "display: block", class:"font-weight-bold" %>
-  <%= f.select(:idSucursal, options_from_collection_for_select(Sucursal.all, :id, :nombre, @usuario.sucursal_id), include_blank: true) %>
+  <%= f.select(:idSucursal, options_from_collection_for_select(@sucursals, :id, :nombre, @usuario.sucursal_id), include_blank: true) %>
 </div>
     <br></br>
     <%= f.submit "Cambiar sucursal" %>

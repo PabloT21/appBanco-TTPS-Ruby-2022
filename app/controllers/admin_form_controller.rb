@@ -31,6 +31,7 @@ class AdminFormController < Devise::RegistrationsController
   def newEmpleado
     authorize! :createPrivUsers, :adForm
     @user = User.new
+    @sucursals = Sucursal.all
   end
 
   def sendEmpleadoForm

@@ -26,6 +26,7 @@ class TurnsController < ApplicationController
   # GET /turns/new
   def new
     @turn = Turn.new
+    @sucursals = Sucursal.all
   end
 
  # GET /turns/1/edit

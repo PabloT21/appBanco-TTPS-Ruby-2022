@@ -28,7 +28,7 @@
   <%= f.hidden_field :rol, value: "empleado" %>
   <div>
     <%= f.label :sucursal_id, style: "display: block" %>
-    <%= f.select(:sucursal_id, options_from_collection_for_select(Sucursal.all, :id, :nombre, 1), include_blank: true) %>
+    <%= f.select(:sucursal_id, options_from_collection_for_select(@sucursals, :id, :nombre, 1), include_blank: true) %>
 </div>
 <br></br>
 
