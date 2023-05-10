@@ -35,7 +35,7 @@ class SchedulesController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /schedules/1 or /schedules/1.json
   def update
     respond_to do |format|
@@ -55,7 +55,7 @@ class SchedulesController < ApplicationController
     if(@sucur.empty?)
       @schedule.destroy
       respond_to do |format|
-       format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
+        format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
         format.json { head :no_content }
       end
     else
@@ -67,7 +67,7 @@ class SchedulesController < ApplicationController
     end
 
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
