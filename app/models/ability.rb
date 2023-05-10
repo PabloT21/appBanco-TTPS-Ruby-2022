@@ -9,7 +9,7 @@ class Ability
     #Turn Permissions
     if user.cliente?
 
-      can :passwordForm, AdminFormController
+      can :password_form, AdminFormController
       can :read, Turn, creador_id: user.id
       can :create, Turn
       can :destroy, Turn, creador_id: user.id, state: 0
@@ -18,13 +18,13 @@ class Ability
 
     elsif user.empleado?
       # Employee user permissions
-      can :passwordForm, AdminFormController
+      can :password_form, AdminFormController
 
       can :read, Sucursal
 
       can :finish, Turn, sucursal_id: user.sucursal_id, state: 0
 
-      can :read, :userList
+      can :read, :user_list
 
       can :read, User
       can :read, Turn, sucursal_id: user.sucursal_id
@@ -32,12 +32,12 @@ class Ability
 
     elsif user.admin?
       # Admin user permissions 
-      can :update, :userSucursal 
-      can :passwordForm, AdminFormController
+      can :update, :user_sucursal 
+      can :password_form, AdminFormController
 
-      can :createPrivUsers, :adForm
+      can :create_priv_users, :ad_form
 
-      can :read, :userList
+      can :read, :user_list
 
 
       can :read, :all

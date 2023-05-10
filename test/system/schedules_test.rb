@@ -14,16 +14,16 @@ class SchedulesTest < ApplicationSystemTestCase
     visit schedules_url
     click_on "New schedule"
 
-    fill_in "Juevesfin", with: @schedule.juevesFin
-    fill_in "Juevesinicio", with: @schedule.juevesInicio
-    fill_in "Lunesfin", with: @schedule.lunesFin
-    fill_in "Lunesinicio", with: @schedule.lunesInicio
-    fill_in "Martesfin", with: @schedule.martesFin
-    fill_in "Martesinicio", with: @schedule.martesInicio
-    fill_in "Miercolesfin", with: @schedule.miercolesFin
-    fill_in "Miercolesinicio", with: @schedule.miercolesInicio
-    fill_in "Viernesfin", with: @schedule.viernesFin
-    fill_in "Viernesinicio", with: @schedule.viernesInicio
+    fill_in "jueves_fin", with: @schedule.jueves_fin
+    fill_in "jueves_inicio", with: @schedule.jueves_inicio
+    fill_in "lunes_fin", with: @schedule.lunes_fin
+    fill_in "lunes_inicio", with: @schedule.lunes_inicio
+    fill_in "martes_fin", with: @schedule.martes_fin
+    fill_in "martes_inicio", with: @schedule.martes_inicio
+    fill_in "miercoles_fin", with: @schedule.miercoles_fin
+    fill_in "miercoles_inicio", with: @schedule.miercoles_inicio
+    fill_in "viernes_fin", with: @schedule.viernes_fin
+    fill_in "viernes_inicio", with: @schedule.viernes_inicio
     click_on "Create Schedule"
 
     assert_text "Schedule was successfully created"
@@ -34,16 +34,16 @@ class SchedulesTest < ApplicationSystemTestCase
     visit schedule_url(@schedule)
     click_on "Edit this schedule", match: :first
 
-    fill_in "Juevesfin", with: @schedule.juevesFin
-    fill_in "Juevesinicio", with: @schedule.juevesInicio
-    fill_in "Lunesfin", with: @schedule.lunesFin
-    fill_in "Lunesinicio", with: @schedule.lunesInicio
-    fill_in "Martesfin", with: @schedule.martesFin
-    fill_in "Martesinicio", with: @schedule.martesInicio
-    fill_in "Miercolesfin", with: @schedule.miercolesFin
-    fill_in "Miercolesinicio", with: @schedule.miercolesInicio
-    fill_in "Viernesfin", with: @schedule.viernesFin
-    fill_in "Viernesinicio", with: @schedule.viernesInicio
+    fill_in "jueves_fin", with: @schedule.jueves_fin
+    fill_in "jueves_inicio", with: @schedule.jueves_inicio
+    fill_in "lunes_fin", with: @schedule.lunes_fin
+    fill_in "lunes_inicio", with: @schedule.lunes_inicio
+    fill_in "martes_fin", with: @schedule.martes_fin
+    fill_in "martes_inicio", with: @schedule.martes_inicio
+    fill_in "miercoles_fin", with: @schedule.miercoles_fin
+    fill_in "miercoles_inicio", with: @schedule.miercoles_inicio
+    fill_in "viernes_fin", with: @schedule.viernes_fin
+    fill_in "viernes_inicio", with: @schedule.viernes_inicio
     click_on "Update Schedule"
 
     assert_text "Schedule was successfully updated"

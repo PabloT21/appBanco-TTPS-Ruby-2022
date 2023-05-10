@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 p "Generando horarios"
 
-horario1 = Schedule.create(name: "Mañana" , lunesInicio: Time.utc(2022,"jan",1,10,00,00) , lunesFin: Time.utc(2022,"jan",1,18,00,00), martesInicio: Time.utc(2022,"jan",1,8,00,00), martesFin: Time.utc(2022,"jan",1,16,00,00), juevesInicio: Time.utc(2022,"jan",1,12,00,00), juevesFin: Time.utc(2022,"jan",1,18,00,00))
+horario1 = Schedule.create(name: "Mañana" , lunes_inicio: Time.utc(2022,"jan",1,10,00,00) , lunes_fin: Time.utc(2022,"jan",1,18,00,00), martes_inicio: Time.utc(2022,"jan",1,8,00,00), martes_fin: Time.utc(2022,"jan",1,16,00,00), jueves_inicio: Time.utc(2022,"jan",1,12,00,00), jueves_fin: Time.utc(2022,"jan",1,18,00,00))
 
-horario2 =Schedule.create(name: "Nocturno" , lunesInicio: Time.utc(2022,"jan",1,18,00,00) , lunesFin: Time.utc(2022,"jan",1,23,00,00), martesInicio: Time.utc(2022,"jan",1,18,00,00), martesFin: Time.utc(2022,"jan",1,23,00,00),miercolesInicio:Time.utc(2022,"jan",1,18,30,00), miercolesFin: Time.utc(2022,"jan",1,23,30,00), juevesInicio: Time.utc(2022,"jan",1,18,30,00), juevesFin: Time.utc(2022,"jan",1,23,00,00), viernesInicio: Time.utc(2022,"jan",1,16,00,00), viernesFin: Time.utc(2022,"jan",1,23,00,00))
+horario2 =Schedule.create(name: "Nocturno" , lunes_inicio: Time.utc(2022,"jan",1,18,00,00) , lunes_fin: Time.utc(2022,"jan",1,23,00,00), martes_inicio: Time.utc(2022,"jan",1,18,00,00), martes_fin: Time.utc(2022,"jan",1,23,00,00),miercoles_inicio:Time.utc(2022,"jan",1,18,30,00), miercoles_fin: Time.utc(2022,"jan",1,23,30,00), jueves_inicio: Time.utc(2022,"jan",1,18,30,00), jueves_fin: Time.utc(2022,"jan",1,23,00,00), viernes_inicio: Time.utc(2022,"jan",1,16,00,00), viernes_fin: Time.utc(2022,"jan",1,23,00,00))
 
-horario3 =Schedule.create(name: "Fin de semana" , viernesInicio: Time.utc(2022,"jan",1,10,00,00) , viernesFin: Time.utc(2022,"jan",1,16,00,00), sabadoInicio: Time.utc(2022,"jan",1,10,00,00), sabadoFin: Time.utc(2022,"jan",1,18,00,00),domingoInicio:Time.utc(2022,"jan",1,9,30,00), domingoFin: Time.utc(2022,"jan",1,16,30,00), lunesInicio: Time.utc(2022,"jan",1,8,30,00), lunesFin: Time.utc(2022,"jan",1,14,00,00))
+horario3 =Schedule.create(name: "Fin de semana" , viernes_inicio: Time.utc(2022,"jan",1,10,00,00) , viernes_fin: Time.utc(2022,"jan",1,16,00,00), sabado_inicio: Time.utc(2022,"jan",1,10,00,00), sabado_fin: Time.utc(2022,"jan",1,18,00,00),domingo_inicio:Time.utc(2022,"jan",1,9,30,00), domingo_fin: Time.utc(2022,"jan",1,16,30,00), lunes_inicio: Time.utc(2022,"jan",1,8,30,00), lunes_fin: Time.utc(2022,"jan",1,14,00,00))
 
 p "Generando sucursales"
 

@@ -6,13 +6,13 @@
         <div class="h5 mb-0 font-weight-bold text-gray-800">Dirección:<span class="text-secondary font-weight-normal"> <%= sucursal.dirección %></span> </div>
         <div class="h5 mb-0 font-weight-bold text-gray-800">Telefono:<span class="text-secondary font-weight-normal"> <%= sucursal.telefono %></span> </div>
         <div class="h5 mb-0 font-weight-bold text-gray-800">Horarios:<span class="text-secondary font-weight-normal"> <%= sucursal.schedule.name %></span> </div>
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Lunes:</div> <%= checkNull(sucursal.schedule.lunesInicio,sucursal.schedule.lunesFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Martes:</div> <%= checkNull(sucursal.schedule.martesInicio,sucursal.schedule.martesFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Miercoles:</div> <%= checkNull(sucursal.schedule.miercolesInicio,sucursal.schedule.miercolesFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Jueves:</div> <%= checkNull(sucursal.schedule.juevesInicio,sucursal.schedule.juevesFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Viernes:</div> <%= checkNull(sucursal.schedule.viernesInicio,sucursal.schedule.viernesFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Sábado:</div> <%= checkNull(sucursal.schedule.sabadoInicio,sucursal.schedule.sabadoFin) %> 
-        <div class="h5 mb-0 font-weight-bold text-gray-800">Domingo:</div> <%= checkNull(sucursal.schedule.domingoInicio,sucursal.schedule.domingoFin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Lunes:</div> <%= check_null(sucursal.schedule.lunes_inicio,sucursal.schedule.lunes_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Martes:</div> <%= check_null(sucursal.schedule.martes_inicio,sucursal.schedule.martes_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Miercoles:</div> <%= check_null(sucursal.schedule.miercoles_inicio,sucursal.schedule.miercoles_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Jueves:</div> <%= check_null(sucursal.schedule.jueves_inicio,sucursal.schedule.jueves_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Viernes:</div> <%= check_null(sucursal.schedule.viernes_inicio,sucursal.schedule.viernes_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Sábado:</div> <%= check_null(sucursal.schedule.sabado_inicio,sucursal.schedule.sabado_fin) %> 
+        <div class="h5 mb-0 font-weight-bold text-gray-800">Domingo:</div> <%= check_null(sucursal.schedule.domingo_inicio,sucursal.schedule.domingo_fin) %> 
 
          </div>
          <div class="col-auto">

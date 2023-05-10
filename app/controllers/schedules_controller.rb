@@ -76,6 +76,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:name,:lunesInicio, :lunesFin, :martesInicio, :martesFin, :miercolesInicio, :miercolesFin, :juevesInicio, :juevesFin, :viernesInicio, :viernesFin,:sabadoInicio, :sabadoFin, :domingoInicio, :domingoFin)
+      params.require(:schedule).permit(:name,:lunes_inicio, :lunes_fin, :martes_inicio, :martes_fin, :miercoles_inicio, :miercoles_fin, :jueves_inicio, :jueves_fin, :viernes_inicio, :viernes_fin,:sabado_inicio, :sabado_fin, :domingo_inicio, :domingo_fin)
     end
 end

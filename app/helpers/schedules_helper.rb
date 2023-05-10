@@ -1,6 +1,6 @@
 module SchedulesHelper
 
-    def checkNull(inicio,fin)
+    def check_null(inicio,fin)
         if inicio.blank?
             "Cerrada"
         else

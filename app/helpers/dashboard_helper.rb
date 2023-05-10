@@ -1,5 +1,5 @@
 module DashboardHelper
-    def showSucursalName(id)
+    def show_sucursal_name(id)
         @sucursal = Sucursal.find(id)
         @sucursal.nombre
     end

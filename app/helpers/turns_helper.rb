@@ -1,6 +1,6 @@
 module TurnsHelper
 
-    def translateState(state)
+    def translate_state(state)
         if state == 0
             "Pendiente"
         else
@@ -8,7 +8,7 @@ module TurnsHelper
         end
     end
 
-    def getPorcentaje(state)
+    def get_porcentaje(state)
         if state == 0
             "50%"
         else
@@ -16,7 +16,7 @@ module TurnsHelper
         end
     end
 
-    def getStateColor(state)
+    def get_state_color(state)
         if state == 0
             "warning"
         else
@@ -24,7 +24,7 @@ module TurnsHelper
         end
     end
 
-    def showField?(state)
+    def show_field?(state)
         if state == 0
             true
         else
@@ -32,25 +32,25 @@ module TurnsHelper
         end
     end
 
-    def showFinishTurn?(state)
-        if ((can? :finish, @turn) && showField?(state) )
+    def show_finish_turn?(state)
+        if ((can? :finish, @turn) && show_field?(state) )
             true
         else
             false
         end 
     end
 
-    def showEmployeeEmail(id)
+    def show_employee_email(id)
         @user = User.find(id)
         @user.email
     end
 
-    def showSucursalName(id)
+    def show_sucursal_name(id)
         @sucursal = Sucursal.find(id)
         @sucursal.nombre
     end
 
-    def showUserMail(id)
+    def show_user_mail(id)
         @user = User.find(id)
         if (@user.blank?)
             "Usuario eliminado"

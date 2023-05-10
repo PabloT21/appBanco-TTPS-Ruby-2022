@@ -9,25 +9,25 @@ Rails.application.routes.draw do
   end
   
   as :user do
-    get "formAdmin", to: 'admin_form#newAdmin'
-    post "sendAdmin", to: 'admin_form#sendAdminForm'
+    get "form_admin", to: 'admin_form#new_admin'
+    post "send_admin", to: 'admin_form#send_admin_form'
 
-    get "formEmpleado", to: 'admin_form#newEmpleado'
-    post "sendEmpleado", to: 'admin_form#sendEmpleadoForm'
+    get "form_empleado", to: 'admin_form#new_empleado'
+    post "send_empleado", to: 'admin_form#send_empleado_form'
   end
   
-  get "passwordForm", to: 'dashboard#passwordForm'
+  get "password_form", to: 'dashboard#password_form'
 
-  post "updatePassword", to: 'dashboard#updatePassword'
+  post "update_password", to: 'dashboard#update_password'
 
-  get "editEmpleado", to: 'dashboard#editEmpleado'
-  post "updateSucursal", to: 'dashboard#updateSucursal'
+  get "edit_empleado", to: 'dashboard#edit_empleado'
+  post "update_sucursal", to: 'dashboard#update_sucursal'
 
   post "finish", to:"turns#finish" 
 
   get "profile", to: "dashboard#profile"
 
-  get "listUsers", to:"dashboard#indexUsers"
+  get "list_users", to:"dashboard#index_users"
 
   # Defines the root path route ("/")
    root "dashboard#main"

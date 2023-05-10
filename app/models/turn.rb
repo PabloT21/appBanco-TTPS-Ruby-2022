@@ -3,10 +3,10 @@
 # Table name: turns
 #
 #  id           :bigint           not null, primary key
-#  comentario   :string(255)
+#  comentario   :string
 #  fecha        :date
 #  hora         :time
-#  reason       :string(255)
+#  reason       :string
 #  state        :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null

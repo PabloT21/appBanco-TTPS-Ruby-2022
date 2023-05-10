@@ -80,32 +80,32 @@ en:
         schedule:
           name:
             blank: no puede estar vacío
-          lunesInicio:
+          lunes_inicio:
             blank: no puede estar vacío
-          lunesFin:
+          lunes_fin:
             blank: no puede estar vacío
-          martesInicio:
+          martes_inicio:
             blank: no puede estar vacío
-          martesFin:
+          martes_fin:
             blank: no puede estar vacío
             greater_than: debe ser mas grande que
-          miercolesInicio:
+          miercoles_inicio:
             blank: no puede estar vacío
-          miercolesFin:
+          miercoles_fin:
             blank: no puede estar vacío
-          juevesInicio:
+          jueves_inicio:
             blank: no puede estar vacío
-          juevesFin:
+          jueves_fin:
             blank: no puede estar vacío
-          viernesInicio:
+          viernes_inicio:
             blank: no puede estar vacío
-          viernesFin:
+          viernes_fin:
             blank: no puede estar vacío
-          sabadoInicio:
+          sabado_inicio:
             blank: no puede estar vacío
-          sabadoFin:
+          sabado_fin:
             blank: no puede estar vacío
-          domingoInicio:
+          domingo_inicio:
             blank: no puede estar vacío
-          domingoFin:
+          domingo_fin:
             blank: no puede estar vacío                                                            

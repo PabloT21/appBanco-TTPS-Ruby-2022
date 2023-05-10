@@ -5,7 +5,7 @@
       <p style ="color:red"><%= msg %></p>
     </div>
   <% end %>
-<%= form_for(User, as: @user, :url => {:controller => "admin_form", :action => "sendAdminForm"} ) do |f| %>
+<%= form_for(User, as: @user, :url => {:controller => "admin_form", :action => "send_admin_form"} ) do |f| %>
 
   <div class="field">
     <%= f.label :email %><br />
