@@ -62,7 +62,7 @@ class AdminFormController < Devise::RegistrationsController
     end
   end
 
-  def passwordForm; end
+  def password_form; end
 
   # GET /resource/sign_up
   def new
