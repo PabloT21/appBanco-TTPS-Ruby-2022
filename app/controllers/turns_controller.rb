@@ -28,8 +28,10 @@ class TurnsController < ApplicationController
     @sucursals = Sucursal.all
   end
 
- # GET /turns/1/edit
- def edit; end
+  # GET /turns/1/edit
+  def edit
+    @sucursals = Sucursal.all
+  end
 
   # POST /turns or /turns.json
   def create
