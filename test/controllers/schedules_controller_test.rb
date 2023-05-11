@@ -17,7 +17,7 @@ class SchedulesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create schedule" do
     assert_difference("Schedule.count") do
-      post schedules_url, params: { schedule: { juevesFin: @schedule.juevesFin, juevesInicio: @schedule.juevesInicio, lunesFin: @schedule.lunesFin, lunesInicio: @schedule.lunesInicio, martesFin: @schedule.martesFin, martesInicio: @schedule.martesInicio, miercolesFin: @schedule.miercolesFin, miercolesInicio: @schedule.miercolesInicio, viernesFin: @schedule.viernesFin, viernesInicio: @schedule.viernesInicio } }
+      post schedules_url, params: { schedule: { jueves_fin: @schedule.jueves_fin, jueves_inicio: @schedule.jueves_inicio, lunes_fin: @schedule.lunes_fin, lunes_inicio: @schedule.lunes_inicio, martes_fin: @schedule.martes_fin, martes_inicio: @schedule.martes_inicio, miercoles_fin: @schedule.miercoles_fin, miercoles_inicio: @schedule.miercoles_inicio, viernes_fin: @schedule.viernes_fin, viernes_inicio: @schedule.viernes_inicio } }
     end
 
     assert_redirected_to schedule_url(Schedule.last)
@@ -34,7 +34,7 @@ class SchedulesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update schedule" do
-    patch schedule_url(@schedule), params: { schedule: { juevesFin: @schedule.juevesFin, juevesInicio: @schedule.juevesInicio, lunesFin: @schedule.lunesFin, lunesInicio: @schedule.lunesInicio, martesFin: @schedule.martesFin, martesInicio: @schedule.martesInicio, miercolesFin: @schedule.miercolesFin, miercolesInicio: @schedule.miercolesInicio, viernesFin: @schedule.viernesFin, viernesInicio: @schedule.viernesInicio } }
+    patch schedule_url(@schedule), params: { schedule: { jueves_fin: @schedule.jueves_fin, jueves_inicio: @schedule.jueves_inicio, lunes_fin: @schedule.lunes_fin, lunes_inicio: @schedule.lunes_inicio, martes_fin: @schedule.martes_fin, martes_inicio: @schedule.martes_inicio, miercoles_fin: @schedule.miercoles_fin, miercoles_inicio: @schedule.miercoles_inicio, viernes_fin: @schedule.viernes_fin, viernes_inicio: @schedule.viernes_inicio } }
     assert_redirected_to schedule_url(@schedule)
   end
 

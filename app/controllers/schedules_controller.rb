@@ -35,7 +35,7 @@ class SchedulesController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /schedules/1 or /schedules/1.json
   def update
     respond_to do |format|
@@ -55,7 +55,7 @@ class SchedulesController < ApplicationController
     if(@sucur.empty?)
       @schedule.destroy
       respond_to do |format|
-       format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
+        format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }
         format.json { head :no_content }
       end
     else
@@ -67,7 +67,7 @@ class SchedulesController < ApplicationController
     end
 
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
@@ -76,6 +76,6 @@ class SchedulesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def schedule_params
-      params.require(:schedule).permit(:name,:lunesInicio, :lunesFin, :martesInicio, :martesFin, :miercolesInicio, :miercolesFin, :juevesInicio, :juevesFin, :viernesInicio, :viernesFin,:sabadoInicio, :sabadoFin, :domingoInicio, :domingoFin)
+      params.require(:schedule).permit(:name,:lunes_inicio, :lunes_fin, :martes_inicio, :martes_fin, :miercoles_inicio, :miercoles_fin, :jueves_inicio, :jueves_fin, :viernes_inicio, :viernes_fin,:sabado_inicio, :sabado_fin, :domingo_inicio, :domingo_fin)
     end
 end

@@ -3,10 +3,10 @@
 # Table name: turns
 #
 #  id           :bigint           not null, primary key
-#  comentario   :string(255)
+#  comentario   :string
 #  fecha        :date
 #  hora         :time
-#  reason       :string(255)
+#  reason       :string
 #  state        :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -42,16 +42,16 @@ class Turn < ApplicationRecord
     if sucursal.nil?
       errors.add(:sucursal_id, " la sucursal no existe")
     else
-        if((fecha > DateTime.current.beginning_of_day) || (state == 1))
-          day = fecha.strftime("%A")
-          hour = hora.strftime("%H:%M:%S")
-          schedule = Schedule.find_by_id(sucursal.schedule_id)
-          if (!schedule.validate_time(day,hour))
-            errors.add(:hour, " no se encuentra dentro de la franja horaria de la sucursal para el día elegido")
-          end
-        else
-          errors.add(:fecha, " no puede ser anterior a hoy.")
+      if((fecha > DateTime.current.beginning_of_day) || (state == 1))
+        day = fecha.strftime("%A")
+        hour = hora.strftime("%H:%M:%S")
+        schedule = Schedule.find_by_id(sucursal.schedule_id)
+        if (!schedule.validate_time(day,hour))
+          errors.add(:hour, " no se encuentra dentro de la franja horaria de la sucursal para el día elegido")
         end
+      else
+        errors.add(:fecha, " no puede ser anterior a hoy.")
+      end
     end
   end
 

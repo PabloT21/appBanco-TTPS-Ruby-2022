@@ -3,9 +3,9 @@
 # Table name: sucursals
 #
 #  id          :bigint           not null, primary key
-#  dirección   :string(255)
-#  nombre      :string(255)
-#  telefono    :string(255)
+#  dirección   :string
+#  nombre      :string
+#  telefono    :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  schedule_id :bigint           not null

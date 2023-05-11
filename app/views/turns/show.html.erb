@@ -4,7 +4,7 @@
 <br></br>
 <div>
 
-<% if showFinishTurn?(@turn.state) %>
+<% if show_finish_turn?(@turn.state) %>
 <div>
 <%= form_with model: @turn,url: finish_path(:id => @turn.id ), method: :post do |f| %>
   <%= f.text_field :comentario, autocomplete: 'off'%>

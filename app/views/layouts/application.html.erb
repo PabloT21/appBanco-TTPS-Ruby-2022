@@ -44,7 +44,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <% if can? :createPrivUsers, :adForm %>
+            <% if can? :create_priv_users, :ad_form %>
 
 
             <!-- Heading -->
@@ -63,8 +63,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Roles:</h6>
-                        <a class="collapse-item" href="/formAdmin">Administrador</a>
-                        <a class="collapse-item" href="/formEmpleado">Personal</a>
+                        <a class="collapse-item" href="/form_admin">Administrador</a>
+                        <a class="collapse-item" href="/form_empleado">Personal</a>
                     </div>
                 </div>
             </li>
@@ -102,10 +102,10 @@
                 </li>
             <% end %>
 
-            <% if can? :read, :userList %>
+            <% if can? :read, :user_list %>
             <!-- Nav Item - Usuarios -->
             <li class="nav-item">
-                <a class="nav-link" href="/listUsers">
+                <a class="nav-link" href="/list_users">
                 <i class="fas fa-user fa-sm fa-fw mr-2"></i>
                 <span>Usuarios</span></a>
             </li>

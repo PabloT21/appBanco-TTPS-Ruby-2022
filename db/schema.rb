@@ -10,29 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_10_201302) do
-  create_table "schedules", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.time "lunesInicio"
-    t.time "lunesFin"
-    t.time "martesInicio"
-    t.time "martesFin"
-    t.time "miercolesInicio"
-    t.time "miercolesFin"
-    t.time "juevesInicio"
-    t.time "juevesFin"
-    t.time "viernesInicio"
-    t.time "viernesFin"
+ActiveRecord::Schema[7.0].define(version: 2023_05_10_204301) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "schedules", force: :cascade do |t|
+    t.time "lunes_inicio"
+    t.time "lunes_fin"
+    t.time "martes_inicio"
+    t.time "martes_fin"
+    t.time "miercoles_inicio"
+    t.time "miercoles_fin"
+    t.time "jueves_inicio"
+    t.time "jueves_fin"
+    t.time "viernes_inicio"
+    t.time "viernes_fin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.time "sabadoInicio"
-    t.time "sabadoFin"
-    t.time "domingoInicio"
-    t.time "domingoFin"
+    t.time "sabado_inicio"
+    t.time "sabado_fin"
+    t.time "domingo_inicio"
+    t.time "domingo_fin"
     t.index ["name"], name: "index_schedules_on_name", unique: true
   end
 
-  create_table "sucursals", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "sucursals", force: :cascade do |t|
     t.string "nombre"
     t.string "dirección"
     t.string "telefono"
@@ -43,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_201302) do
     t.index ["schedule_id"], name: "index_sucursals_on_schedule_id"
   end
 
-  create_table "turns", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "turns", force: :cascade do |t|
     t.bigint "sucursal_id", null: false
     t.date "fecha"
     t.string "reason"
@@ -59,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_201302) do
     t.index ["sucursal_id"], name: "index_turns_on_sucursal_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -68,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_201302) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rol"
-    t.integer "sucursal_id"
+    t.bigint "sucursal_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["sucursal_id"], name: "index_users_on_sucursal_id"
@@ -78,4 +81,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_10_201302) do
   add_foreign_key "turns", "sucursals"
   add_foreign_key "turns", "users", column: "creador_id"
   add_foreign_key "turns", "users", column: "empleados_id"
+  add_foreign_key "users", "sucursals"
 end
