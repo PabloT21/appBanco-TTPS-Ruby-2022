@@ -30,8 +30,8 @@ class TurnsController < ApplicationController
   end
 
  # GET /turns/1/edit
- def edit
- end
+  def edit
+  end
 
   # POST /turns or /turns.json
   def create
@@ -71,11 +71,11 @@ class TurnsController < ApplicationController
   def update
     respond_to do |format|
       if @turn.update(turn_params)
-          format.html { redirect_to turn_url(@turn), notice: "Turn was successfully updated." }
-          format.json { render :show, status: :ok, location: @turn }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @turn.errors, status: :unprocessable_entity }
+        format.html { redirect_to turn_url(@turn), notice: "Turn was successfully updated." }
+        format.json { render :show, status: :ok, location: @turn }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @turn.errors, status: :unprocessable_entity }
       end
     end
   end

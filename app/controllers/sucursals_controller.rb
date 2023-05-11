@@ -53,28 +53,28 @@ class SucursalsController < ApplicationController
   def destroy
     @turnos = Turn.where(sucursal_id: @sucursal.id)
     @empleados = User.where(sucursal_id: @sucursal.id)
-if(@empleados.empty?)
-    if(@turnos.empty?)
-    @sucursal.destroy
-    respond_to do |format|
-      format.html { redirect_to sucursals_url, notice: "Sucursal was successfully destroyed." }
-      format.json { head :no_content }
-    end
-    else
-      @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene turnos asignados")
-      respond_to do |format|
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @sucursal.errors, status: :unprocessable_entity }
+    if(@empleados.empty?)
+      if(@turnos.empty?)
+        @sucursal.destroy
+        respond_to do |format|
+          format.html { redirect_to sucursals_url, notice: "Sucursal was successfully destroyed." }
+          format.json { head :no_content }
+        end
+      else
+        @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene turnos asignados")
+        respond_to do |format|
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @sucursal.errors, status: :unprocessable_entity }
+        end
       end
-    end
-else
-  @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene empleados asignados")
+    else
+      @sucursal.errors.add(:sucursal," no se puede eliminar porque tiene empleados asignados")
       respond_to do |format|
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @sucursal.errors, status: :unprocessable_entity } 
       end
     end
-end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
