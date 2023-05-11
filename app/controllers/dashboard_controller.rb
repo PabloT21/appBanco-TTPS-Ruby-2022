@@ -1,13 +1,11 @@
 class DashboardController < ApplicationController
 
-def index 
-end
+def index ; end
 
-def main
-end
+def main; end
 
-def profile
-end
+def profile; end
+
 
 def indexUsers
     authorize! :read, :userList
@@ -18,8 +16,8 @@ def indexUsers
     end
 end
 
-def passwordForm
-end
+def passwordForm; end
+
 
 
 def editEmpleado

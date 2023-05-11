@@ -20,8 +20,8 @@ class TurnsController < ApplicationController
   end
 
   # GET /turns/1 or /turns/1.json
-  def show
-  end
+  def show; end
+  
 
   # GET /turns/new
   def new
@@ -30,8 +30,8 @@ class TurnsController < ApplicationController
   end
 
  # GET /turns/1/edit
- def edit
- end
+ def edit; end
+ 
 
   # POST /turns or /turns.json
   def create

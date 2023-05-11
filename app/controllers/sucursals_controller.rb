@@ -8,8 +8,8 @@ class SucursalsController < ApplicationController
   end
 
   # GET /sucursals/1 or /sucursals/1.json
-  def show
-  end
+  def show; end
+  
 
   # GET /sucursals/new
   def new
@@ -18,8 +18,8 @@ class SucursalsController < ApplicationController
   end
 
   # GET /sucursals/1/edit
-  def edit
-  end
+  def edit; end
+  
 
   # POST /sucursals or /sucursals.json
   def create
