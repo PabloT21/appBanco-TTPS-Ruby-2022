@@ -49,6 +49,4 @@ class User < ApplicationRecord
   def cliente?
     rol=="usuario"
   end
-
-
 end

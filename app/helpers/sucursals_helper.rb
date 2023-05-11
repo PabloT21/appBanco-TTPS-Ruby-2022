@@ -1,6 +1,5 @@
 module SucursalsHelper
 
-
   def check_null(inicio,fin)
     if inicio.blank?
       "Cerrada"
@@ -8,5 +7,4 @@ module SucursalsHelper
       "#{inicio.strftime("%H:%M:%S")} - #{fin.strftime("%H:%M:%S")}"
     end
   end
-
 end

@@ -35,7 +35,6 @@ class Turn < ApplicationRecord
   belongs_to :creador, :class_name => "User"
   belongs_to :empleado, :class_name => "User", optional: true
 
-
   def validate_date
     return unless errors.blank?
     sucursal = Sucursal.find_by_id(sucursal_id)
@@ -54,5 +53,4 @@ class Turn < ApplicationRecord
       end
     end
   end
-
 end

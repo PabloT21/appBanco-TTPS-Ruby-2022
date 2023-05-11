@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -29,7 +28,6 @@ class Ability
       can :read, User
       can :read, Turn, sucursal_id: user.sucursal_id
 
-
     elsif user.admin?
       # Admin user permissions 
       can :update, :user_sucursal 
@@ -39,13 +37,11 @@ class Ability
 
       can :read, :user_list
 
-
       can :read, :all
   
       can :manage, User
       can :manage, Sucursal
       can :manage, Schedule
     end
-
   end
 end

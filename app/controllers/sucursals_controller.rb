@@ -10,7 +10,6 @@ class SucursalsController < ApplicationController
   # GET /sucursals/1 or /sucursals/1.json
   def show; end
   
-
   # GET /sucursals/new
   def new
     @sucursal = Sucursal.new
@@ -20,7 +19,6 @@ class SucursalsController < ApplicationController
   # GET /sucursals/1/edit
   def edit; end
   
-
   # POST /sucursals or /sucursals.json
   def create
     @sucursal = Sucursal.new(sucursal_params)

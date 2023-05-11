@@ -22,7 +22,6 @@ class TurnsController < ApplicationController
   # GET /turns/1 or /turns/1.json
   def show; end
   
-
   # GET /turns/new
   def new
     @turn = Turn.new
@@ -31,7 +30,6 @@ class TurnsController < ApplicationController
 
  # GET /turns/1/edit
  def edit; end
- 
 
   # POST /turns or /turns.json
   def create
@@ -64,8 +62,6 @@ class TurnsController < ApplicationController
       redirect_to "/turns", :notice => 'El turno fue atendido correctamente!'
     end
   end
-
-
 
   # PATCH/PUT /turns/1 or /turns/1.json
   def update

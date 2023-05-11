@@ -10,7 +10,6 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1 or /schedules/1.json
   def show; end
-  
 
   # GET /schedules/new
   def new
@@ -19,7 +18,6 @@ class SchedulesController < ApplicationController
 
   # GET /schedules/1/edit
   def edit; end
-  
 
   # POST /schedules or /schedules.json
   def create

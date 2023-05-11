@@ -1,6 +1,5 @@
 module TurnsHelper
 
-
   def translate_state(state)
     if state == 0
       "Pendiente"

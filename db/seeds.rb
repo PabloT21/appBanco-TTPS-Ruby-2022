@@ -15,18 +15,15 @@ horario3 =Schedule.create(name: "Fin de semana" , viernes_inicio: Time.utc(2022,
 
 p "Generando sucursales"
 
-
 sucursal1 =Sucursal.create(nombre: "Tolosa", telefono: "221 23322", dirección: "Av 112", schedule_id: horario1.id)
 
 sucursal2 =Sucursal.create(nombre: "Centro", telefono: "221 22111", dirección: "Av 7 677", schedule: horario2)
-
 
 p "Generando usuarios"
 
 usuario1 = User.create(email: "juanperez@gmail.com", password:"juanperez", password_confirmation:"juanperez", rol:"usuario")
 
 usuario2 = User.create(email: "ignacio@gmail.com", password:"ignacio", password_confirmation:"ignacio", rol:"usuario")
-
 
 usuarioEmpleado = User.create(email: "tomasdominguez@gmail.com", password:"dominguez", password_confirmation:"dominguez", rol:"empleado", sucursal: sucursal1)
 usuarioEmpleado2 = User.create(email: "martin@gmail.com", password:"martin", password_confirmation:"martin", rol:"empleado", sucursal: sucursal2)
@@ -36,6 +33,5 @@ usuarioAdmin = User.create(email: "admin123@gmail.com", password:"abcd1234", pas
 p "Generando turnos"
 
 turno1= Turn.create(sucursal_id: sucursal1.id, state: 0, fecha: Time.utc(2022,"dec",26,13,30,00), hora: Time.utc(2022,"dec",19,14,00,00) , reason: "Necesito cambiar mi tarjeta", creador_id: usuario1.id )
-
 
 turno2= Turn.create(sucursal_id: sucursal2.id, state: 0, fecha: Time.utc(2022,"dec",26,13,30,00) , hora: Time.utc(2022,"dec",26,22,30,00) , reason: "Quiero cambiar mi clave", creador_id: usuario2.id ) 

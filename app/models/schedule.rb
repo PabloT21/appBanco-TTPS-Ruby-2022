@@ -31,8 +31,6 @@
 
 # FIX ME: Debe poder haber horarios tambien el sábado y domingo.
 # Tambien deben poder estar vacíos algunos días
-
-
 class Schedule < ApplicationRecord
   has_one :sucursal
 
@@ -100,7 +98,6 @@ class Schedule < ApplicationRecord
     end
   end
 
-
   def validate_time(day,hour)
     case day
     when "Monday"
@@ -131,5 +128,4 @@ class Schedule < ApplicationRecord
       end
     end
   end
-
 end

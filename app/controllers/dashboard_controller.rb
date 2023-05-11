@@ -6,7 +6,6 @@ def main; end
 
 def profile; end
 
-
   def index_users
     authorize! :read, :user_list
     if (current_user.empleado?)
@@ -17,8 +16,6 @@ def profile; end
   end 
 
 def passwordForm; end
-
-
 
   def edit_empleado
     authorize! :update, :user_sucursal 
