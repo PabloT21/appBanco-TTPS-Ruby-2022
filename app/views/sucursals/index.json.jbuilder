@@ -1,1 +1,1 @@
-json.array! @sucursals, partial: "sucursals/sucursal", as: :sucursal
+json.array! @branch_offices, partial: "sucursals/sucursal", as: :sucursal

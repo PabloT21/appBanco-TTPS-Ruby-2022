@@ -32,7 +32,7 @@ class AdminFormController < Devise::RegistrationsController
   def new_empleado
     authorize! :create_priv_users, :ad_form
     @user = User.new
-    @sucursals = Sucursal.all
+    @branch_offices = Sucursal.all
   end
 
   def send_empleado_form

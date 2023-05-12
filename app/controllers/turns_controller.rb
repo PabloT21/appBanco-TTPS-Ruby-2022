@@ -25,12 +25,12 @@ class TurnsController < ApplicationController
   # GET /turns/new
   def new
     @turn = Turn.new
-    @sucursals = Sucursal.all
+    @branch_offices = Sucursal.all
   end
 
   # GET /turns/1/edit
   def edit
-    @sucursals = Sucursal.all
+    @branch_offices = Sucursal.all
   end
 
   # POST /turns or /turns.json
@@ -50,14 +50,14 @@ class TurnsController < ApplicationController
 
   # POST /turns or /turns.json
   def finish
-    @turno =  params[:turn]
-    if @turno[:comentario].empty?
+    @turn =  params[:turn]
+    if @turn[:comentario].empty?
       flash[:errorF] = "El comentario no puede estar vacío"
       redirect_to "/turns"
     else
-      @comentario = @turno[:comentario]
+      @comment = @turn[:comentario]
       @turn = Turn.find(params[:id])
-      @turn.comentario = @comentario
+      @turn.comentario = @comment
       @turn.empleados_id = current_user.id
       @turn.state = 1
       @turn.save

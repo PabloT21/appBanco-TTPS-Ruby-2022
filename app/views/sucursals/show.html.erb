@@ -1,17 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @sucursal %>
+<%= render @branch_office %>
 <br></br>
 <div>
 
-<% if can? :manage, @sucursal %> 
-  <%= link_to "Editar sucursal", edit_sucursal_path(@sucursal), class: "btn btn-primary" %> |
+<% if can? :manage, @branch_office %> 
+  <%= link_to "Editar sucursal", edit_sucursal_path(@branch_office), class: "btn btn-primary" %> |
 <% end %>
   
   <%= link_to "Ver todas las sucursales", sucursals_path, class: "btn btn-secondary" %>
   <br></br>
   
-<% if can? :manage, @sucursal %>
-  <%= button_to "Eliminar sucursal", @sucursal, method: :delete, class: "btn btn-danger" %>
+<% if can? :manage, @branch_office %>
+  <%= button_to "Eliminar sucursal", @branch_office, method: :delete, class: "btn btn-danger" %>
 <% end %>
   </div>

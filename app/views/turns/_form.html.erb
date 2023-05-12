@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :sucursal_id, style: "display: block" %>
-    <%= form.select(:sucursal_id, options_from_collection_for_select(@sucursals, :id, :nombre, @turn.sucursal_id), include_blank: true) %>
+    <%= form.select(:sucursal_id, options_from_collection_for_select(@branch_offices, :id, :nombre, @turn.sucursal_id), include_blank: true) %>
 </div>
   <div>
     <%= form.label :fecha, style: "display: block" %>

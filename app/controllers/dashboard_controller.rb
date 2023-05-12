@@ -20,8 +20,8 @@ class DashboardController < ApplicationController
   def edit_empleado
     authorize! :update, :user_sucursal 
 
-    @sucursals = Sucursal.all
-    @usuario = User.find(params[:user_id])
+    @branch_offices = Sucursal.all
+    @user = User.find(params[:user_id])
   end
 
   def update_sucursal
@@ -31,8 +31,8 @@ class DashboardController < ApplicationController
       status = false
       flash[:errorF] = "Tenes que ingresar una sucursal"
     else
-      @sucursal = Sucursal.find(params[:sucursal_id])
-      if (@sucursal.blank?)
+      @branch_office = Sucursal.find(params[:sucursal_id])
+      if (@branch_office.blank?)
         status = false
         flash[:errorF] = "No existe esa sucursal"
       end

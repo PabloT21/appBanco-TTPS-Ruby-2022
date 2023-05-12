@@ -49,8 +49,8 @@ class SchedulesController < ApplicationController
 
   # DELETE /schedules/1 or /schedules/1.json
   def destroy
-    @sucur = Sucursal.where(schedule_id: @schedule.id)
-    if(@sucur.empty?)
+    @branch_office = Sucursal.where(schedule_id: @schedule.id)
+    if(@branch_office.empty?)
       @schedule.destroy
       respond_to do |format|
         format.html { redirect_to schedules_url, notice: "Schedule was successfully destroyed." }

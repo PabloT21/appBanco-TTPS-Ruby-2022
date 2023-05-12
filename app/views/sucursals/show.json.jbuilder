@@ -1,1 +1,1 @@
-json.partial! "sucursals/sucursal", sucursal: @sucursal
+json.partial! "sucursals/sucursal", sucursal: @branch_office
